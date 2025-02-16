@@ -6,7 +6,10 @@ export default defineNuxtConfig({
     ],
     build: {
         transpile: [],
+        extractCSS: true,
+        optimizeCSS: true,
     },
     vite: {},
+
 })
 
