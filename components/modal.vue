@@ -4,7 +4,7 @@ import {ref} from 'vue';
 export default {
     name: 'Modal',
     setup() {
-        const isVisible = ref(true);
+        const isVisible = ref(false);
         const open = () => {
             isVisible.value = true;
         };
