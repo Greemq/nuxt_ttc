@@ -8,6 +8,11 @@ export default defineNuxtConfig({
         transpile: [],
         extractCSS: true,
         optimizeCSS: true,
+        webpack: {
+            optimization: {
+                minimize: true,
+            },
+        },
     },
     vite: {},
 
