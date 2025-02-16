@@ -4,7 +4,7 @@ import AssistantCard from "~/components/AssistantCard/AssistantCard.vue";
 definePageMeta({
     layout: 'panel',
 });
-const step = ref(3);
+const step = ref(1);
 </script>
 
 <template>
