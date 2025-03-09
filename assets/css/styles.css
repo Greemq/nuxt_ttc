@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+.btn {
+  @apply px-4 py-2 flex cursor-pointer rounded-lg items-center text-base;
+  gap: 14px;
+}
+
+/**body {
+  @apply bg-amber-200
+}
+
+ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme("colors.gray");
+  border-radius: 5px;
+  padding-top: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+textarea {
+  resize: vertical;
+  overflow-y: scroll;
+}
+
+.btn {
+  @apply justify-center;
+}
+.btn.primary {
+  @apply bg-primary text-white;
+}
+.btn.primary.disabled {
+  @apply bg-gray border-0;
+  color: theme("colors.white");
+}
+.btn.secondary {
+  @apply border border-primary bg-white text-primary;
+}
+.btn.secondary.disabled {
+  @apply text-white bg-gray border-gray;
+}
+.btn.secondary svg {
+  @apply text-primary;
+}
+.btn.tretiary {
+  @apply text-primary border-0;
+}
+.btn.tretiary.disabled {
+  @apply text-gray;
+}
+.btn.tretiary.disabled svg {
+  @apply text-gray;
+}
+.btn.disabled {
+  @apply cursor-not-allowed;
+}
+
+.icon {
+  @apply bg-primary px-4 py-2;
+  padding: 14px;
+}
+
+.input-form, .input-textarea, .select-form {
+  @apply flex gap-1 flex-col w-full;
+}
+.input-form.label, .input-textarea.label, .select-form.label {
+  @apply text-dark font-normal text-sm;
+  line-height: 20px;
+}
+.input-form .input-class, .input-textarea .input-class, .select-form .input-class {
+  @apply border
+    bg-white
+    border-gray-light
+    px-3
+    py-2
+    text-base
+    rounded-lg
+    leading-6
+    hover:border-primary
+    focus:border-primary
+    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between;
+}
+.input-form .input-class input, .input-form .input-class select, .input-textarea .input-class input, .input-textarea .input-class select, .select-form .input-class input, .select-form .input-class select {
+  @apply w-full;
+}
+.input-form .input-class textarea, .input-textarea .input-class textarea, .select-form .input-class textarea {
+  @apply border-error;
+}
+.input-form.error label, .input-textarea.error label, .select-form.error label {
+  @apply text-error;
+}
+.input-form.error textarea, .input-textarea.error textarea, .select-form.error textarea {
+  @apply border-error;
+}
+.input-form.error .input-class, .input-textarea.error .input-class, .select-form.error .input-class {
+  @apply border-error;
+}
+.input-form.disabled .input-class, .input-textarea.disabled .input-class, .select-form.disabled .input-class {
+  @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+}
+.input-form.disabled textarea, .input-textarea.disabled textarea, .select-form.disabled textarea {
+  @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+}
+
+.input-form input {
+  @apply leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+}
+.input-form input::-webkit-outer-spin-button,
+.input-form input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-textarea textarea {
+  @apply border border-gray-light bg-white px-3 py-2 text-base rounded-lg leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 min-h-16;
+}
+
+.select-form select {
+  @apply border border-gray-light !bg-white px-3 py-2 text-base rounded-lg leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("/assets/images/Vector (4).svg") no-repeat right 18px center;
+  background-size: 12px;
+}
+
+.dropdown {
+  @apply flex gap-1 flex-col w-full relative;
+}
+.dropdown label {
+  @apply text-dark font-normal text-sm;
+  line-height: 20px;
+}
+.dropdown__error label {
+  @apply text-error;
+}
+.dropdown__error button {
+  @apply border-error text-error;
+}
+.dropdown_button {
+  @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray;
+}
+.dropdown_button__icon {
+  width: 24px;
+  height: 24px;
+  padding: 0 6.4px;
+  @apply items-center flex;
+}
+.dropdown_button__disabled {
+  @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+}
+.dropdown_menu {
+  z-index: 10;
+  @apply flex flex-col gap-1 bg-white rounded-lg w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute;
+  top: 100%;
+}
+.dropdown_menu__list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-right: 4px;
+  z-index: 12;
+  clip-path: inset(0 round 8px);
+}
+.dropdown_menu__item {
+  @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer;
+}
+
+.checkbox-form input {
+  @apply hidden;
+}
+.checkbox-form__item {
+  @apply flex items-center gap-3 text-dark font-normal text-sm;
+}
+.checkbox-form__item .checkbox-icon {
+  @apply relative rounded w-5 h-5 border-gray border hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer;
+}
+
+@font-face {
+  font-family: "Golos UI";
+  src: url("/assets/fonts/Golos-UI_Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos UI";
+  src: url("/assets/fonts/Golos-UI_Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Golos UI";
+  src: url("/assets/fonts/Golos-UI_Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+body {
+  font-family: "Golos UI", sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

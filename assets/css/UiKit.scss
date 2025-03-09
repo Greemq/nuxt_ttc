@@ -1,0 +1,234 @@
+.btn {
+  @apply px-4 py-2 flex cursor-pointer rounded-lg items-center text-base;
+  gap: 14px
+}
+
+/**body {
+  @apply bg-amber-200
+}
+
+ */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;;
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.gray');
+  border-radius: 5px;
+  padding-top: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+textarea {
+  resize: vertical;
+  overflow-y: scroll;
+
+}
+
+.btn {
+  @apply justify-center;
+  &.primary {
+    @apply bg-primary text-white;
+    &.disabled {
+      @apply bg-gray border-0;
+      color: theme('colors.white');
+    }
+  }
+
+  &.secondary {
+    @apply border border-primary bg-white text-primary;
+    &.disabled {
+      @apply text-white bg-gray border-gray ;
+    }
+
+    svg {
+      @apply text-primary
+    }
+  }
+
+  &.tretiary {
+    @apply text-primary border-0;
+    &.disabled {
+      @apply text-gray;
+      svg {
+        @apply text-gray
+      }
+    }
+  }
+
+  &.disabled {
+    @apply cursor-not-allowed;
+  }
+}
+
+.icon {
+  @apply bg-primary px-4 py-2 ;
+  padding: 14px
+}
+
+.input-form, .input-textarea, .select-form {
+  @apply flex gap-1 flex-col w-full;
+  &.label {
+    @apply text-dark font-normal text-sm;
+    line-height: 20px;
+  }
+
+  .input-class {
+    @apply border
+    bg-white
+    border-gray-light
+    px-3
+    py-2
+    text-base
+    rounded-lg
+    leading-6
+    hover:border-primary
+    focus:border-primary
+    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between;
+    input, select {
+      @apply w-full;
+    }
+
+    textarea {
+      @apply border-error;
+    }
+  }
+
+  &.error {
+    label {
+      @apply text-error;
+    }
+
+    textarea {
+      @apply border-error;
+    }
+
+    .input-class {
+      @apply border-error;
+    }
+  }
+
+  &.disabled {
+    .input-class {
+      @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+    }
+
+    textarea {
+      @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+    }
+  }
+}
+
+.input-form {
+  input {
+    @apply leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.input-textarea {
+  textarea {
+    @apply border border-gray-light bg-white px-3 py-2 text-base rounded-lg leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 min-h-16;
+  }
+}
+
+.select-form {
+  select {
+    @apply border border-gray-light !bg-white px-3 py-2 text-base rounded-lg leading-6 hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url('/assets/images/Vector (4).svg') no-repeat right 18px center;
+    background-size: 12px;
+
+  }
+}
+
+.dropdown {
+  @apply flex gap-1 flex-col w-full relative;
+  label {
+    @apply text-dark font-normal text-sm;
+    line-height: 20px;
+  }
+
+  &__error {
+    label {
+      @apply text-error
+    }
+
+    button {
+      @apply border-error text-error;
+    }
+  }
+
+
+  &_button {
+    @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray;
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+      padding: 0 6.4px;
+      @apply items-center flex;
+    }
+
+    &__disabled {
+      @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg
+    }
+
+  }
+
+
+  &_menu {
+    z-index: 10;
+    @apply flex flex-col gap-1 bg-white rounded-lg  w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute;
+    top: 100%;
+
+    &__list {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-right: 4px;
+      z-index: 12;
+      clip-path: inset(0 round 8px);
+
+    }
+
+    &__item {
+      @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer;
+
+    }
+
+  }
+}
+
+.checkbox-form {
+  input {
+    @apply hidden;
+  }
+
+  &__item {
+    @apply flex items-center gap-3 text-dark font-normal text-sm;
+
+    .checkbox-icon {
+      @apply relative rounded w-5 h-5 border-gray border hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer
+
+    }
+  }
+}
+
+
