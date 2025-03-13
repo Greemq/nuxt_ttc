@@ -9,6 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         }
         return null;
     });
+
     nuxtApp.provide('getFileType', (file) => {
         if (!file || !(file instanceof File)) {
             return 'unknown';
@@ -27,16 +28,8 @@ export default defineNuxtPlugin((nuxtApp) => {
 
         return extensions[mimeType] || 'unknown';
     });
-    const icons = import.meta.glob("/assets/images/icons/*.svg", {eager: true});
-    nuxtApp.provide("getFileIconPath", (fileType) => {
-        const filePath = `/assets/images/icons/${fileType}.svg`;
-        console.log(fileType)
 
-        if (icons[filePath]) {
-            return icons[filePath].default;
-        } else {
-            console.error("Ошибка: иконка не найдена", fileType);
-            return "";
-        }
+    nuxtApp.provide("getFileIconPath", (fileType) => {
+        return `/images/icons/${fileType}.svg`;
     });
 });

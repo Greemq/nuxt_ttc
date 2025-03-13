@@ -8,6 +8,13 @@ useHead({
         lang: locale
     }
 });
+useSeoMeta({
+    title: 'ttc',
+    ogTitle: 'ttc',
+    description: 'ttc ai',
+    ogDescription: 'ttc ai proj',
+    ogImage: '/images/logo_1.svg'
+});
 </script>
 <template>
     <NuxtLayout>

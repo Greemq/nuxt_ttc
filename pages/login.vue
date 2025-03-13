@@ -16,10 +16,7 @@ const confirm_password = ref('');
 //         }
 //     });
 // };
-onMounted(()=>{
-    console.log('asdddddddddddddddddddddddddd')
-})
-console.log('Login component loaded')
+
 </script>
 
 <template>

@@ -27,7 +27,7 @@ const openDropdown = (index) => {
     <div class="docs">
         <div v-for="(item,index) in 17" class="docs_item">
             <div class="docs_item__control">
-                <img src="assets/images/icons/Dots.svg" alt="" @click="openDropdown(index)">
+                <img src="/images/icons/Dots.svg" alt="" @click="openDropdown(index)">
                 <ui-dropdown :options="['удалить']" ref="dropdownRefs" :ref="el => dropdownRefs[index] = el"/>
             </div>
             <div class="docs_item__icon">
