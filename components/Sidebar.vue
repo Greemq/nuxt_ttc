@@ -25,16 +25,16 @@ const isActive = (path) => route.path === localePath(path);
     <aside :class="{'sidebar_toggle':toggle}" class="sidebar">
         <div class="sidebar_container">
             <div class="sidebar_container__logo">
-                <img alt="" class="toggle_button" src="/assets/images/icons/Hide%20menu.svg" @click="toggleSidebar()">
-                <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/assets/images/logo_1.svg">
+                <img alt="" class="toggle_button" src="/images/icons/Hide%20menu.svg" @click="toggleSidebar()">
+                <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/images/icons/logo_1.svg">
             </div>
             <div class="sidebar_container__menu">
                 <div :class="{'sidebar_container__menu__item_active':isActive('/assistants')}" class="sidebar_container__menu__item" @click="router.push('/assistants')">
-                    <img class="sidebar_container__menu_icon" src="assets/images/icons/Home.svg">
+                    <img class="sidebar_container__menu_icon" src="/images/icons/Home.svg">
                     <div class="sidebar_container__menu_name toggle_name">Ассистенты</div>
                 </div>
                 <div :class="{'sidebar_container__menu__item_active':isActive('/knowledge')}" class="sidebar_container__menu__item" @click="router.push('/knowledge')">
-                    <img class="sidebar_container__menu_icon" src="assets/images/icons/Book.svg">
+                    <img class="sidebar_container__menu_icon" src="/images/icons/Book.svg">
                     <div class="sidebar_container__menu_name toggle_name">центр знаний</div>
                 </div>
             </div>

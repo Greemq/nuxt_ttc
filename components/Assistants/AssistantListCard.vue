@@ -86,7 +86,7 @@ function getRandomText() {
                 <div class="info_body__label">label here</div>
                 <div class="info_body_items">
                     <div v-for="item in 10" class="info_body_items__item">
-                        <img src="assets/images/icons/Instagram.svg">
+                        <img src="/images/icons/Instagram.svg">
                         <span> {{ getRandomText()}}</span>
                     </div>
                 </div>

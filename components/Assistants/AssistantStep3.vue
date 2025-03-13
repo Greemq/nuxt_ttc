@@ -59,31 +59,31 @@ const googleXlsx = ref(null);
                         v-if="file.type == 'doc'"
                         alt=""
                         class="file_info__icon"
-                        src="/assets/images/icons/doc.svg"
+                        src="//images/icons/doc.svg"
                     />
                     <img
                         v-else-if="file.type == 'xlsx'"
                         alt=""
                         class="file_info__icon"
-                        src="/assets/images/icons/xlsx.svg"
+                        src="/images/icons/xlsx.svg"
                     />
                     <img
                         v-else-if="file.type == 'xls'"
                         alt=""
                         class="file_info__icon"
-                        src="/assets/images/icons/xls.svg"
+                        src="/images/icons/xls.svg"
                     />
                     <img
                         v-else-if="file.type == 'txt'"
                         alt=""
                         class="file_info__icon"
-                        src="/assets/images/icons/txt.svg"
+                        src="/images/icons/txt.svg"
                     />
                     <img
                         v-else-if="file.type == 'pdf'"
                         alt=""
                         class="file_info__icon"
-                        src="/assets/images/icons/pdf.svg"
+                        src="/images/icons/pdf.svg"
                     />
 
                     <div class="file_info__container">
@@ -123,7 +123,7 @@ const googleXlsx = ref(null);
             <div class="online_docs">
                 <div class="online_docs__item">
                     <div class="online_docs__item__content">
-                        <img alt="" src="assets/images/icons/Google%20doc.svg">
+                        <img alt="" src="/images/icons/Google%20doc.svg">
                         <ui-input v-model="googleDoc" label="link to google"/>
                         <ui-button :disabled="!googleDoc" label="Добавить" type="primary"/>
                     </div>
@@ -131,7 +131,7 @@ const googleXlsx = ref(null);
                 </div>
                 <div class="online_docs__item">
                     <div class="online_docs__item__content">
-                        <img alt="" src="assets/images/icons/Google%20sheet.svg">
+                        <img alt="" src="/images/icons/Google%20sheet.svg">
                         <ui-input v-model="googleXlsx" label="link to google"/>
                         <ui-button :disabled="!googleXlsx" label="Добавить" type="primary"/>
                     </div>

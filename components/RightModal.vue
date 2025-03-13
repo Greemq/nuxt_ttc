@@ -25,7 +25,7 @@ defineExpose({open, close});
             <div class="modal_body">
                 <div class="modal_body__title">
                     <span>{{ title }}</span>
-                    <img src="assets/images/icons/Close.svg" @click="close">
+                    <img src="/images/icons/Close.svg" @click="close">
                 </div>
                 <div class="modal_body__content">
                     <slot></slot>

@@ -23,10 +23,10 @@ const confirm_password = ref('');
     <div class="flex w-full h-screen min-h-full">
         <div class="login">
             <div class="login_nav">
-                <img class="login_nav__logo" src="assets/images/logo_1.svg">
+                <img class="login_nav__logo" src="/images/icons/logo_1.svg">
                 <div class="login_nav__locale">
                     <span>Ru</span>
-                    <img alt="" src="assets/images/arrow_down.svg">
+                    <img alt="" src="/images/icons/arrow_down.svg">
                 </div>
             </div>
             <div class="login_body">
@@ -35,7 +35,7 @@ const confirm_password = ref('');
                 </div>
                 <div class="login_body__form">
                     <div class="google_btn">
-                        <img alt="" src="assets/images/google_logo.svg">
+                        <img alt="" src="/images/icons/google_logo.svg">
                         <div>Продолжить через Google</div>
                     </div>
                     <div class="or_class">
@@ -77,35 +77,35 @@ const confirm_password = ref('');
         <div class="hidden lg:w-1/2 p-4 lg:grid grid-cols-3 gap-x-6 gap-y-4 cards">
             <div class="card w-full h-full card_black">
                 <div>123</div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_1.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_1.svg">
             </div>
             <div class="card w-full h-full card_green">
                 <div></div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_2.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_2.svg">
             </div>
             <div class="card w-full h-full "></div>
             <div class="card w-full h-full "></div>
             <div class="card w-full h-full card_black">
                 <div></div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_3.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_3.svg">
             </div>
             <div class="card w-full h-full card_green">
                 <div>Диалоги</div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_4.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_4.svg">
             </div>
             <div class="card w-full h-full card_green">
                 <div></div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_5.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_5.svg">
             </div>
             <div class="card w-full h-full col-span-2"></div>
             <div class="card w-full h-full card_black">
                 <div>Центр знаний</div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_6.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_6.svg">
             </div>
             <div class="card w-full h-full"></div>
             <div class="card w-full h-full card_green ">
                 <div></div>
-                <img alt="" class="w-10 h-10" src="assets/images/vector_7.svg">
+                <img alt="" class="w-10 h-10" src="/images/icons/vector_7.svg">
             </div>
 
         </div>
@@ -137,19 +137,19 @@ const confirm_password = ref('');
 }
 
 ::v-deep(.card:nth-child(3)) {
-    background-image: url("assets/images/img_1.png")
+    background-image: url("/images/icons/img_1.png")
 }
 
 ::v-deep(.card:nth-child(4)) {
-    background-image: url("assets/images/img_2.png")
+    background-image: url("/images/icons/img_2.png")
 }
 
 ::v-deep(.card:nth-child(8)) {
-    background-image: url("assets/images/img_3.png")
+    background-image: url("/images/icons/img_3.png")
 }
 
 ::v-deep(.card:nth-child(10)) {
-    background-image: url("assets/images/img_4.png")
+    background-image: url("/images/icons/img_4.png")
 }
 
 .login {

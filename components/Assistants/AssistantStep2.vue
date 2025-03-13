@@ -50,7 +50,7 @@ const deleteItem = (index) => {
                 <ui-text-area v-model="modelValue[index]" class="max-h-16 min-h-16" resize-disabled/>
             </div>
             <div class="order_form__item__delete" @click="deleteItem(index)">
-                <img src="assets/images/icons/Delete.svg">
+                <img src="/images/icons/Delete.svg">
             </div>
         </div>
 

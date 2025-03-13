@@ -14,19 +14,19 @@
                         nameda asd
                     </div>
                 </div>
-                <img src="assets/images/icons/Down.svg"/>
+                <img src="/images/icons/Down.svg"/>
             </div>
             <div class="nav_right__icons">
                 <div>
-                    <img src="assets/images/icons/Message.svg" alt="">
+                    <img src="/images/icons/Message.svg" alt="">
                 </div>
                 <div>
-                    <img src="assets/images/icons/Notifications.svg">
+                    <img src="/images/icons/Notifications.svg">
                 </div>
             </div>
             <div class="nav_right__locale">
                 <div>Ru</div>
-                <img src="assets/images/icons/Down.svg">
+                <img src="/images/icons/Down.svg">
             </div>
         </div>
 <!--        <div class="nav_left">-->
