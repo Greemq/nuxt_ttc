@@ -1,6 +1,10 @@
 <script setup>
 import {ref} from "vue";
+import { useLocalePath } from '#imports'
 
+const route = useRoute()
+const router= useRouter()
+const localePath = useLocalePath()
 const toggle = ref(false);
 const toggleSidebar = () => {
     toggle.value = !toggle.value;
@@ -13,39 +17,35 @@ const routes = ref([
     },
 
 ])
+
+const isActive = (path) => route.path === localePath(path);
 </script>
 
 <template>
-    <div :class="{'sidebar_toggle':toggle}" class="sidebar">
+    <aside :class="{'sidebar_toggle':toggle}" class="sidebar">
         <div class="sidebar_container">
             <div class="sidebar_container__logo">
                 <img alt="" class="toggle_button" src="/assets/images/icons/Hide%20menu.svg" @click="toggleSidebar()">
                 <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/assets/images/logo_1.svg">
             </div>
             <div class="sidebar_container__menu">
-                <div :class="{'sidebar_container__menu__item_active':true}" class="sidebar_container__menu__item">
+                <div :class="{'sidebar_container__menu__item_active':isActive('/assistants')}" class="sidebar_container__menu__item" @click="router.push('/assistants')">
                     <img class="sidebar_container__menu_icon" src="assets/images/icons/Home.svg">
                     <div class="sidebar_container__menu_name toggle_name">Ассистенты</div>
                 </div>
-                <div :class="{'sidebar_container__menu__item_active':false}" class="sidebar_container__menu__item">
-                    <img class="sidebar_container__menu_icon" src="assets/images/icons/Home.svg">
-                    <div class="sidebar_container__menu_name toggle_name">Показатели</div>
-                </div>
-                <div :class="{'sidebar_container__menu__item_active':false}" class="sidebar_container__menu__item">
-                    <img class="sidebar_container__menu_icon" src="assets/images/icons/Home.svg">
-                    <div class="sidebar_container__menu_name toggle_name">Диалоги</div>
+                <div :class="{'sidebar_container__menu__item_active':isActive('/knowledge')}" class="sidebar_container__menu__item" @click="router.push('/knowledge')">
+                    <img class="sidebar_container__menu_icon" src="assets/images/icons/Book.svg">
+                    <div class="sidebar_container__menu_name toggle_name">центр знаний</div>
                 </div>
             </div>
-            <!--            <div class="sidebar_container__toggle">1</div>-->
         </div>
-    </div>
+    </aside>
 </template>
 
 <style scoped>
 
 .sidebar {
-
-    @apply bg-white transition-all duration-300 overflow-hidden max-w-[236px] w-full border-r-gray-light border-r;
+    @apply bg-white transition-all duration-300 overflow-hidden max-w-[236px] w-full border-r-gray-light border-r shrink-0;
 
     &_container {
         @apply flex flex-col gap-4 h-full px-4 ;
@@ -109,11 +109,11 @@ const routes = ref([
         }
 
         &.sidebar_toggle .ttc_logo {
-            display: none; /* Убираем элемент из потока документа */
+            display: none;
         }
 
         &.sidebar_toggle .toggle_name {
-            display: none; /* Убираем элемент из потока документа */
+            display: none;
         }
 
 

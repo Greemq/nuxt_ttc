@@ -12,7 +12,8 @@ const close = () => {
 };
 
 defineProps({
-    title: String
+    title: String,
+    size: {type: String, default: 'w-1/3'}
 });
 
 defineExpose({open, close});
@@ -20,7 +21,7 @@ defineExpose({open, close});
 
 <template>
     <div v-if="isVisible" class="modal right">
-        <div class="p-6 h-full w-2/3">
+        <div :class="size" class="p-6 h-full">
             <div class="modal_body">
                 <div class="modal_body__title">
                     <span>{{ title }}</span>

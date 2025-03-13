@@ -1,24 +1,29 @@
 <script setup>
 
 onMounted(() => {
-    console.log(route.name)
-})
-const route=useRoute()
-const sidebarHidden = route.meta.sidebarHidden ?? false;
+    console.log(route.name);
+});
+const route = useRoute();
+const sidebarHidden = computed(() => route.meta.sidebarHidden ?? false);
+
+watchEffect(() => {
+    console.log("Current route:", route.name);
+    console.log("Sidebar hidden:", sidebarHidden.value);
+});
+const slots = useSlots();
 </script>
 
 <template>
-    <div class="flex h-screen">
+    <div class="flex h-screen overflow-auto">
         <sidebar v-if="!sidebarHidden"/>
-        <div class="grow flex flex-col">
+        <div class="flex flex-col flex-grow">
             <ui-header/>
-            <div class="bg-bg grow">
+            <main class="bg-bg flex flex-col px-6 py-5 gap-6 h-full overflow-y-auto">
                 <slot/>
-            </div>
+            </main>
         </div>
     </div>
 </template>
 
 <style scoped>
-
 </style>

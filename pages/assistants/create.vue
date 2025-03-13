@@ -7,7 +7,7 @@ import AssistantStep4 from "~/components/Assistants/AssistantStep4.vue";
 definePageMeta({layout: 'base-layout', sidebarHidden: true});
 
 const route = useRoute();
-const step = ref(4);
+const step = ref(1);
 const steps = ref([
     {step: 1, name: 'Общая информация'},
     {step: 2, name: 'Скрипт разговора'},

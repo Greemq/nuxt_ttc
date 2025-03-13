@@ -27,9 +27,10 @@ export default defineNuxtPlugin((nuxtApp) => {
 
         return extensions[mimeType] || 'unknown';
     });
-    const icons = import.meta.glob("~/assets/images/icons/*.svg", {eager: true});
+    const icons = import.meta.glob("/assets/images/icons/*.svg", {eager: true});
     nuxtApp.provide("getFileIconPath", (fileType) => {
-        const filePath = `~/assets/images/icons/${fileType}.svg`;
+        const filePath = `/assets/images/icons/${fileType}.svg`;
+        console.log(fileType)
 
         if (icons[filePath]) {
             return icons[filePath].default;

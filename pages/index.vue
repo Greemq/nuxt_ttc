@@ -7,6 +7,8 @@
       <NuxtLink to="/login">login</NuxtLink>
       <NuxtLink to="/platform/">platform</NuxtLink>
       <NuxtLink to="/assistants/create">assistant</NuxtLink>
+      <NuxtLink to="/assistants">assistants</NuxtLink>
+      <NuxtLink to="/knowledge">knowledge</NuxtLink>
       <NuxtLink to="/uikit">uikit</NuxtLink>
   </div>
 </template>

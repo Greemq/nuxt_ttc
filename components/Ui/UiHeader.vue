@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="nav">
+    <header class="nav">
         <div class="nav_right">
             <div class="nav_right__profile">
                 <div class="nav_right__profile_1">
@@ -32,7 +32,7 @@
 <!--        <div class="nav_left">-->
 <!--            left-->
 <!--        </div>-->
-    </div>
+    </header>
 </template>
 
 <style scoped>
@@ -43,7 +43,7 @@
         @apply self-end flex gap-8 flex-row-reverse justify-center items-center;
 
         &__profile {
-            @apply flex gap-4 py-2;
+            @apply flex gap-4;
 
             &_1 {
                 @apply flex gap-2;
