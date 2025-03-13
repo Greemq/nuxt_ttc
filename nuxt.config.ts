@@ -39,7 +39,8 @@ export default defineNuxtConfig({
 
     vite: {
         build: {
-            cssCodeSplit: false
+            cssCodeSplit: true,
+            minify: 'terser'
         }
     },
     runtimeConfig: {
