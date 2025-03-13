@@ -26,7 +26,7 @@ const confirm_password = ref('');
                 <img class="login_nav__logo" src="/images/icons/logo_1.svg">
                 <div class="login_nav__locale">
                     <span>Ru</span>
-                    <img alt="" src="/images/icons/arrow_down.svg">
+                    <img alt="" src="/images/icons/Down.svg">
                 </div>
             </div>
             <div class="login_body">

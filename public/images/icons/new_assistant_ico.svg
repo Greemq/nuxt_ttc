@@ -1,0 +1,13 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="magnifying-glass--glass-search-magnifying" clip-path="url(#clip0_399_16849)">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M11.51 11.7904C13.4418 11.7904 15.0077 10.2244 15.0077 8.29264C15.0077 6.36091 13.4418 4.79492 11.51 4.79492C9.57828 4.79492 8.01229 6.36091 8.01229 8.29264C8.01229 10.2244 9.57828 11.7904 11.51 11.7904ZM10.8036 12.8781L11.5391 14.5104L12.2747 12.8781C12.5183 12.3375 13.1762 12.1264 13.6889 12.4244L16.5808 14.1051C16.8888 14.2842 17.0783 14.6135 17.0783 14.9697V19.2526C17.0783 19.8049 16.6306 20.2526 16.0783 20.2526H11.5562L11.5391 20.2524L11.5221 20.2526H7C6.44771 20.2526 6 19.8049 6 19.2526V14.9697C6 14.6135 6.18951 14.2842 6.4975 14.1051L9.38938 12.4244C9.90207 12.1264 10.56 12.3375 10.8036 12.8781Z" fill="white"/>
+<circle id="Ellipse 497" cx="15.0801" cy="20" r="5" fill="#747474"/>
+<path id="Vector 2498" d="M15.0801 17V23" stroke="white" stroke-linecap="round"/>
+<path id="Vector 2499" d="M18.0801 20L12.0801 20" stroke="white" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_399_16849">
+<rect width="24" height="24" fill="white"/>
+</clipPath>
+</defs>
+</svg>
