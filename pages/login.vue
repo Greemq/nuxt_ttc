@@ -75,35 +75,35 @@ const confirm_password = ref('');
         </div>
 
         <div class="hidden lg:w-1/2 p-4 lg:grid grid-cols-3 gap-x-6 gap-y-4 cards">
-            <div class="card w-full h-full card_black">
+            <div class="card  card_black">
                 <div>123</div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_1.svg">
             </div>
-            <div class="card w-full h-full card_green">
+            <div class="card  card_green">
                 <div></div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_2.svg">
             </div>
-            <div class="card w-full h-full "></div>
-            <div class="card w-full h-full "></div>
-            <div class="card w-full h-full card_black">
+            <div class="card  "></div>
+            <div class="card  "></div>
+            <div class="card  card_black">
                 <div></div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_3.svg">
             </div>
-            <div class="card w-full h-full card_green">
+            <div class="card  card_green">
                 <div>Диалоги</div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_4.svg">
             </div>
-            <div class="card w-full h-full card_green">
+            <div class="card  card_green">
                 <div></div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_5.svg">
             </div>
-            <div class="card w-full h-full col-span-2"></div>
-            <div class="card w-full h-full card_black">
+            <div class="card  col-span-2"></div>
+            <div class="card  card_black">
                 <div>Центр знаний</div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_6.svg">
             </div>
-            <div class="card w-full h-full"></div>
-            <div class="card w-full h-full card_green ">
+            <div class="card "></div>
+            <div class="card  card_green ">
                 <div></div>
                 <img alt="" class="w-10 h-10" src="/images/icons/vector_7.svg">
             </div>
@@ -116,7 +116,7 @@ const confirm_password = ref('');
 .card {
     border-radius: 24px;
     background-size: cover;
-    @apply flex p-6 text-white flex-col;
+    @apply flex p-6 text-white flex-col  w-full h-full;
     cursor: default;
 
     &_black {
