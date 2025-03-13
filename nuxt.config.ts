@@ -1,4 +1,5 @@
 import {defineNuxtConfig} from 'nuxt/config';
+
 export default defineNuxtConfig({
     css: ["@/assets/css/styles.scss"],
     build: {
@@ -37,4 +38,9 @@ export default defineNuxtConfig({
 
 
     compatibilityDate: '2025-02-21',
+    vite: {
+        build: {
+            cssCodeSplit: false
+        }
+    }
 });
