@@ -1,6 +1,6 @@
 <script setup>
-import Breadcrumbs from "~/components/breadcrumbs.vue";
-import AssistantListCard from "~/components/Assistants/AssistantListCard.vue";
+import Breadcrumbs from "@/components/breadcrumbs.vue";
+import AssistantListCard from "@/components/Assistants/AssistantListCard.vue";
 
 definePageMeta({
     layout: "base-layout",

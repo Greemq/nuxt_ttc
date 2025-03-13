@@ -1,8 +1,8 @@
 <script setup>
-import AssistantStep2 from "~/components/Assistants/AssistantStep2.vue";
-import AssistantStep1 from "~/components/Assistants/AssistantStep1.vue";
-import AssistantStep3 from "~/components/Assistants/AssistantStep3.vue";
-import AssistantStep4 from "~/components/Assistants/AssistantStep4.vue";
+import AssistantStep2 from "@/components/Assistants/AssistantStep2.vue";
+import AssistantStep1 from "@/components/Assistants/AssistantStep1.vue";
+import AssistantStep3 from "@/components/Assistants/AssistantStep3.vue";
+import AssistantStep4 from "@/components/Assistants/AssistantStep4.vue";
 
 definePageMeta({layout: 'base-layout', sidebarHidden: true});
 

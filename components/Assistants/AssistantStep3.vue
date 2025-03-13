@@ -1,6 +1,6 @@
 <script setup>
 import {computed} from "vue";
-import UiTabs from "~/components/Ui/UiTabs.vue";
+import UiTabs from "@/components/Ui/UiTabs.vue";
 
 const props = defineProps({
     modelValue: {type: Array, required: true},

@@ -1,5 +1,5 @@
 <script setup>
-import AssistantStep3 from "~/components/Assistants/AssistantStep3.vue";
+import AssistantStep3 from "@/components/Assistants/AssistantStep3.vue";
 
 definePageMeta({
     layout: "base-layout",
