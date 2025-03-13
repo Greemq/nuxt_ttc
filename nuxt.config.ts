@@ -12,9 +12,9 @@ export default defineNuxtConfig({
         // transpile: ["flowbite"]
     },
     // pages: false,
-    devtools: {enabled: false},
+    devtools: false,
 
-    modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss'],
+    modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxt/image'],
 
     i18n: {
         locales: [
@@ -37,10 +37,21 @@ export default defineNuxtConfig({
     },
 
 
-    compatibilityDate: '2025-02-21',
     vite: {
         build: {
             cssCodeSplit: false
         }
-    }
+    },
+    runtimeConfig: {
+        public: {
+            imageDomains: process.env.IMAGE_DOMAINS || 'yourdomain.com'
+        }
+    },
+    image: {
+        domains: [
+            ...(process.env.IMAGE_DOMAINS?.split(',') || ['yourdomain.com']),
+            ...(process.env.NODE_ENV === 'development' ? ['localhost'] : []),
+        ],
+        provider: 'ipx',
+    },
 });
