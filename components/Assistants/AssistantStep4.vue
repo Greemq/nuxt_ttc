@@ -1,26 +1,37 @@
 <script setup>
 defineProps({
-    modelValue: {type: Array}
+    modelValue: {type: Array},
+    title: {type: String},
+    messages: {type: Array}
 });
 </script>
 
 <template>
     <div class="chat-form">
-        <div class="chat-form__title">title</div>
+        <div v-if="title" class="chat-form__title">{{ title }}</div>
         <div class="chat-form__body">
             <div class="chat-form__body__messages">
-
-                <div class="message message_assistant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                    deserunt dolorem eos error molestiae mollitia veritatis voluptatibus? Aliquam architecto at culpa
-                    deserunt quia velit.
-                    <div class="time">8:00</div>
+                <div class="message" :class="{'message_assistant':message.type==1,'message_user':message.type==2}" v-for="message in messages">
+                    {{message.title}}
+                    <div class="time">{{message.time}}</div>
                 </div>
-                <div class="message message_user">Lorem ipsum dolor sit amet.
-                    <div class="time">8:01</div>
-                </div>
+<!--                <div class="message message_assistant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam-->
+<!--                    deserunt dolorem eos error molestiae mollitia veritatis voluptatibus? Aliquam architecto at culpa-->
+<!--                    deserunt quia velit.-->
+<!--                    <div class="time">8:00</div>-->
+<!--                </div>-->
+<!--                <div class="message message_user">Lorem ipsum dolor sit amet.-->
+<!--                    <div class="time">8:01</div>-->
+<!--                </div>-->
             </div>
             <div class="chat-form__body__buttons">
-                <input type="text">
+                <svg class="clip" fill="none" height="24" viewBox="0 0 24 24" width="24"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M8.73401 16.6455L15.0467 10.6028C15.8046 9.87735 15.8046 8.7011 15.0467 7.97561C14.2888 7.25012 13.06 7.25012 12.3021 7.97561L6.0351 13.9744C4.59506 15.3529 4.59506 17.5877 6.0351 18.9662C7.47514 20.3446 9.8099 20.3446 11.2499 18.9662L17.6084 12.8798C19.7305 10.8484 19.7305 7.5549 17.6084 5.52353C15.4862 3.49216 12.0455 3.49216 9.92335 5.52353L4.8 10.4277"
+                        stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
+                </svg>
+                <input type="text" placeholder="Введите сообщение...">
                 <div class="btn">
                     <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_4191_4173)">
@@ -48,11 +59,11 @@ defineProps({
     @apply w-full h-full flex flex-col gap-6;
 
     &__title {
-
+        @apply font-bold text-base;
     }
 
     &__body {
-        @apply rounded-2xl border border-gray-light flex-grow flex flex-col p-6 gap-6;
+        @apply rounded-2xl border border-gray-light flex-grow flex flex-col p-6 gap-6 bg-white;
 
         &__messages {
             @apply flex-grow flex flex-col-reverse gap-2;
@@ -88,10 +99,14 @@ defineProps({
         }
 
         &__buttons {
-            @apply flex gap-6;
+            @apply flex gap-6 relative;
+
+            .clip {
+                @apply absolute left-3 top-2 cursor-pointer text-gray-dark w-6 h-6
+            }
 
             input {
-                @apply flex-grow px-3 py-2 border border-gray-light rounded-lg hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+                @apply flex-grow px-3 py-2 pl-12 border border-gray-light rounded-lg hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
             }
 
             .btn {

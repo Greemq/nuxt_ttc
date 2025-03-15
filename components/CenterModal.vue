@@ -52,7 +52,7 @@ defineExpose({open, close});
             max-height: 600px;
         }
         &__buttons{
-            @apply pr-4 pt-6
+            @apply pr-4 pt-6 flex justify-end
         }
     }
 

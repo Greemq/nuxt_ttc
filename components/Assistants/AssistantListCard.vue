@@ -85,7 +85,7 @@ function getRandomText() {
             <div class="assistant_card__info_body">
                 <div class="info_body__label">label here</div>
                 <div class="info_body_items">
-                    <div v-for="item in 10" class="info_body_items__item">
+                    <div v-for="item in 7" class="info_body_items__item">
                         <img src="/images/icons/Instagram.svg">
                         <span> {{ getRandomText()}}</span>
                     </div>
@@ -140,10 +140,13 @@ function getRandomText() {
 }
 
 .assistant_cols {
-    @apply flex py-3;
+    @apply flex py-3 ;
 
     &_title {
         @apply text-gray-dark;
+    }
+    &_1,&_2,&_3,&_4,&_5,&_6{
+        @apply h-14
     }
 
     &_1, &_6 {

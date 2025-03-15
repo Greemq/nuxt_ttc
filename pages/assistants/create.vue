@@ -25,6 +25,40 @@ const formStep2 = ref(['name1', 'name2', 'name3'
 ]);
 const formStep3 = ref([])
 const formStep4 = ref([])
+const messages = ref([
+    {
+        type:1,
+        title:'title',
+        time:'00:00'
+    },
+    {
+        type:2,
+        title:'title2',
+        time:'00:01'
+    },
+    {
+        type:1,
+        title:'titl3',
+        time:'00:02'
+    },
+    {
+        type:2,
+        title:'title4',
+        time:'00:03'
+    },
+    {
+        type:1,
+        title:'title5',
+        time:'00:04'
+    },
+    {
+        type:2,
+        title:'title6',
+        time:'00:05'
+    },
+
+
+])
 </script>
 
 <template>
@@ -34,7 +68,7 @@ const formStep4 = ref([])
             <AssistantStep1 v-if="step==1" v-model="formStep1"/>
             <AssistantStep2 v-else-if="step==2" v-model="formStep2"/>
             <AssistantStep3 v-else-if="step==3" v-model="formStep3"/>
-            <AssistantStep4 v-else-if="step==4" v-model="formStep4"/>
+            <AssistantStep4 :messages v-else-if="step==4" v-model="formStep4" title="Протестируйте вашего ассистента"/>
             <template #buttons>
                 <ui-button label="продолжить" type="primary" @click="handleSteps(1)"/>
                 <ui-button class="!text-gray-dark" label="назад" type="tertiary" @click="handleSteps(-1)"/>

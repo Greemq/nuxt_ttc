@@ -8,8 +8,8 @@
                     v-for="(option, index) in options"
                     :key="index"
                     class="dropdown_list__button"
-                    @click="selectOption(option)">
-                    {{ option }}
+                    @click="selectOption(option[optionValue])">
+                    {{ option[optionLabel] }}
                 </button>
             </div>
         </div>
@@ -24,6 +24,15 @@ defineProps({
         type: Array,
         required: true
     },
+    optionLabel:{
+        type:String,
+        default:'name'
+    },
+    optionValue:{
+        type:String,
+        default:'id'
+    }
+
 });
 
 const isVisible = ref(false);

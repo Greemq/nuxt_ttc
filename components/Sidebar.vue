@@ -37,7 +37,12 @@ const isActive = (path) => route.path === localePath(path);
                     <img class="sidebar_container__menu_icon" src="/images/icons/Book.svg">
                     <div class="sidebar_container__menu_name toggle_name">центр знаний</div>
                 </div>
+                <div :class="{'sidebar_container__menu__item_active':isActive('/test-drive')}" class="sidebar_container__menu__item" @click="router.push('/test-drive')">
+                    <img class="sidebar_container__menu_icon" src="/images/icons/Test%20drive.svg">
+                    <div class="sidebar_container__menu_name toggle_name">Тест драйв</div>
+                </div>
             </div>
+
         </div>
     </aside>
 </template>
