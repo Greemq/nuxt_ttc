@@ -12,31 +12,31 @@ export default defineNuxtConfig({
             },
         },
         sourcemap: false,
-        rollupOptions: {
-            output: {
-                manualChunks(id) {
-                    if (id.includes('node_modules')) return 'vendor';
-                }
-            }
-        }
+        // rollupOptions: {
+        //     output: {
+        //         manualChunks(id) {
+        //             if (id.includes('node_modules')) return 'vendor';
+        //         }
+        //     }
+        // }
     },
-
-    nitro: {
-        minify: true,
-        compressPublicAssets: true,
-        experimental: {
-            wasm: false,
-            asyncContext: false
-        },
-        storage: {
-            storage: {
-                cache: {
-                    driver: 'fs',
-                    base: resolve(process.cwd(), '.nitro/cache')
-                }
-            }
-        }
-    },
+    //
+    // nitro: {
+    //     minify: true,
+    //     compressPublicAssets: true,
+    //     experimental: {
+    //         wasm: false,
+    //         asyncContext: false
+    //     },
+    //     storage: {
+    //         storage: {
+    //             cache: {
+    //                 driver: 'fs',
+    //                 base: resolve(process.cwd(), '.nitro/cache')
+    //             }
+    //         }
+    //     }
+    // },
 
     devtools: false,
 
@@ -51,16 +51,16 @@ export default defineNuxtConfig({
         vueI18n: './i18n.config.js',
     },
 
-    vite: {
-        build: {
-            cssCodeSplit: true,
-            minify: 'esbuild',
-            sourcemap: false,
-        },
-        server: {
-            fs: {strict: false}
-        }
-    },
+    // vite: {
+    //     build: {
+    //         cssCodeSplit: true,
+    //         minify: 'esbuild',
+    //         sourcemap: false,
+    //     },
+    //     server: {
+    //         fs: {strict: false}
+    //     }
+    // },
 
     runtimeConfig: {
         public: {
