@@ -49,6 +49,11 @@ const isActive = (path) => route.path === localePath(path);
                     <img class="sidebar_container__menu_icon" src="/images/icons/Test%20drive.svg">
                     <div class="sidebar_container__menu_name toggle_name">Тест драйв</div>
                 </NuxtLink>
+                <NuxtLink :to="localePath('/integrations')" :class="{'sidebar_container__menu__item_active':isActive('/integrations')}"
+                     class="sidebar_container__menu__item">
+                    <img class="sidebar_container__menu_icon" src="/images/icons/Transfer.svg">
+                    <div class="sidebar_container__menu_name toggle_name">Интеграции</div>
+                </NuxtLink>
             </div>
 
         </div>

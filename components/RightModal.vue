@@ -24,7 +24,8 @@ defineExpose({open, close});
         <div :class="size" class="p-6 h-full">
             <div class="modal_body">
                 <div class="modal_body__title">
-                    <span>{{ title }}</span>
+                    <span v-if="title">{{ title }}</span>
+                    <slot name="title"></slot>
                     <img src="/images/icons/Close.svg" @click="close">
                 </div>
                 <div class="modal_body__content">
