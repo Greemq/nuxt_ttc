@@ -24,12 +24,21 @@ export default defineNuxtConfig({
     },
     nitro: {
         minify: true,
-        externals: {
-            inline: ['vue', 'nuxt']
-        },
+        compressPublicAssets: true,
         experimental: {
             wasm: false,
             asyncContext: false
+        },
+        storage: {
+            cache: {
+                driver: 'fs',
+                options: {
+                    base: '.nitro/cache'
+                }
+            }
+        },
+        prerender: {
+            crawlLinks: false,
         }
     },
 
@@ -61,9 +70,15 @@ export default defineNuxtConfig({
     vite: {
         build: {
             cssCodeSplit: true,
-            minify: 'terser'
+            minify: 'terser',
+            sourcemap: false,
+        },
+        server: {
+            fs: {
+                strict: false,
+            }
         }
-    },
+    }
 
     runtimeConfig: {
         public: {
