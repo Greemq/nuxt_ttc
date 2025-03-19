@@ -174,16 +174,6 @@ textarea {
   @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer;
 }
 
-.checkbox-form input {
-  @apply hidden;
-}
-.checkbox-form__item {
-  @apply flex items-center gap-3 text-dark font-normal text-sm;
-}
-.checkbox-form__item .checkbox-icon {
-  @apply relative rounded w-5 h-5 border-gray border hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer;
-}
-
 @font-face {
   font-family: "Golos UI";
   src: url("/assets/fonts/Golos-UI_Regular.ttf") format("truetype");

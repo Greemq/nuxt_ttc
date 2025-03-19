@@ -29,6 +29,10 @@ const isActive = (path) => route.path === localePath(path);
                 <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/images/icons/logo_1.svg">
             </div>
             <div class="sidebar_container__menu">
+                <div :class="{'sidebar_container__menu__item_active':isActive('/main')}" class="sidebar_container__menu__item" @click="router.push('/main')">
+                    <img class="sidebar_container__menu_icon" src="/images/icons/Home.svg">
+                    <div class="sidebar_container__menu_name toggle_name">Главная</div>
+                </div>
                 <div :class="{'sidebar_container__menu__item_active':isActive('/assistants')}" class="sidebar_container__menu__item" @click="router.push('/assistants')">
                     <img class="sidebar_container__menu_icon" src="/images/icons/Home.svg">
                     <div class="sidebar_container__menu_name toggle_name">Ассистенты</div>

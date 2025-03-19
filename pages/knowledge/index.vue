@@ -127,15 +127,15 @@ const handleSelect = (option) => {
             @appy flex flex-col gap-1 items-center justify-center text-center w-full;
 
             div {
-                @apply text-center
+                @apply text-center;
             }
 
             div:first-child {
-                @apply font-normal text-base
+                @apply font-normal text-base;
             }
 
             div:last-child {
-                @apply font-normal text-sm text-gray
+                @apply font-normal text-sm text-gray;
             }
 
         }

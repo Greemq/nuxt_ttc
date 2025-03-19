@@ -216,19 +216,6 @@ textarea {
   }
 }
 
-.checkbox-form {
-  input {
-    @apply hidden;
-  }
 
-  &__item {
-    @apply flex items-center gap-3 text-dark font-normal text-sm;
-
-    .checkbox-icon {
-      @apply relative rounded w-5 h-5 border-gray border hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer
-
-    }
-  }
-}
 
 
