@@ -78,7 +78,7 @@ export default defineNuxtConfig({
                 strict: false,
             }
         }
-    }
+    },
 
     runtimeConfig: {
         public: {
