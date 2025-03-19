@@ -1,5 +1,6 @@
 import {defineNuxtConfig} from 'nuxt/config';
 import {resolve} from 'path';
+
 export default defineNuxtConfig({
     css: ["@/assets/css/styles.scss"],
 
@@ -28,9 +29,11 @@ export default defineNuxtConfig({
             asyncContext: false
         },
         storage: {
-            cache: {
-                driver: 'fs',
-                base: resolve(__dirname, '.nitro/cache')
+            storage: {
+                cache: {
+                    driver: 'fs',
+                    base: resolve(process.cwd(), '.nitro/cache')
+                }
             }
         }
     },
