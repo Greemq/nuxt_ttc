@@ -11,6 +11,7 @@ export default defineNuxtConfig({
             },
         },
         sourcemap: false,
+        analyze: false
     },
 
     devtools: false,
@@ -38,5 +39,14 @@ export default defineNuxtConfig({
         ],
         provider: 'static'
     },
+
+    sourcemap: {
+        server: true,
+        client: true
+    },
+    nitro: {
+        logLevel: 3, // Максимальный лог
+        sourceMap: true,
+    }
 
 });
