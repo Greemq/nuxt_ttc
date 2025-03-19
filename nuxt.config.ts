@@ -22,23 +22,23 @@ export default defineNuxtConfig({
             }
         }
     },
-    nitro: {
-        minify: true,
-        compressPublicAssets: true,
-        experimental: {
-            wasm: false,
-            asyncContext: false
-        },
-        storage: {
-            cache: {
-                driver: 'fs',
-                base: './.nitro/cache'
-            }
-        },
-        prerender: {
-            crawlLinks: false,
-        }
-    },
+    // nitro: {
+    //     minify: true,
+    //     compressPublicAssets: true,
+    //     experimental: {
+    //         wasm: false,
+    //         asyncContext: false
+    //     },
+    //     storage: {
+    //         cache: {
+    //             driver: 'fs',
+    //             base: './.nitro/cache'
+    //         }
+    //     },
+    //     prerender: {
+    //         crawlLinks: false,
+    //     }
+    // },
 
     // pages: false,
     devtools: false,
