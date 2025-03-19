@@ -28,7 +28,8 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            imageDomains: process.env.NUXT_PUBLIC_IMAGE_DOMAINS ?? 'yourdomain.com'
+            imageDomains: process.env.NUXT_PUBLIC_IMAGE_DOMAINS ?? 'yourdomain.com',
+            debug: process.env.NODE_ENV !== 'production'
         }
     },
 
@@ -45,8 +46,8 @@ export default defineNuxtConfig({
         client: true
     },
     nitro: {
-        logLevel: 3, // Максимальный лог
+        logLevel: 3,
         sourceMap: true,
-    }
+    },
 
 });
