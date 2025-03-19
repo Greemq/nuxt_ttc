@@ -1,5 +1,5 @@
 import {defineNuxtConfig} from 'nuxt/config';
-
+import {resolve} from 'path';
 export default defineNuxtConfig({
     css: ["@/assets/css/styles.scss"],
 
