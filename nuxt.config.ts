@@ -24,22 +24,19 @@ export default defineNuxtConfig({
         strategy: 'prefix',
         vueI18n: './i18n.config.js',
     },
-    //
-    // runtimeConfig: {
-    //     public: {
-    //         imageDomains: process.env.NUXT_PUBLIC_IMAGE_DOMAINS ?? 'yourdomain.com'
-    //     }
-    // },
-    //
-    // image: {
-    //     domains: [
-    //         ...(process.env.NUXT_PUBLIC_IMAGE_DOMAINS?.split(',') ?? ['yourdomain.com']),
-    //         ...(process.env.NODE_ENV === 'development' ? ['localhost'] : [])
-    //     ],
-    //     provider: 'static'
-    // },
-    
-    nitro: {
-        middleware: ['server/middleware/errorHandler']
-    }
+
+    runtimeConfig: {
+        public: {
+            imageDomains: process.env.NUXT_PUBLIC_IMAGE_DOMAINS ?? 'yourdomain.com'
+        }
+    },
+
+    image: {
+        domains: [
+            ...(process.env.NUXT_PUBLIC_IMAGE_DOMAINS?.split(',') ?? ['yourdomain.com']),
+            ...(process.env.NODE_ENV === 'development' ? ['localhost'] : [])
+        ],
+        provider: 'static'
+    },
+
 });
