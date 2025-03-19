@@ -41,7 +41,7 @@ export default defineNuxtConfig({
         langDir: 'locales/',
         strategy: 'prefix',
         defaultLocaleRouteNameSuffix: '',
-        vueI18n: './i18n.config.js',
+        // vueI18n: './i18n.config.js',
         detectBrowserLanguage: {
             useCookie: true,
             cookieKey: 'i18n_redirected',
@@ -69,6 +69,9 @@ export default defineNuxtConfig({
             ...(process.env.NODE_ENV === 'development' ? ['localhost'] : []),
         ],
         provider: 'ipx',
+    },
+    experimental: {
+        appManifest: false,
     },
 
     compatibilityDate: '2025-03-19',
