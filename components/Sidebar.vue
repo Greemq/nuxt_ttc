@@ -1,22 +1,22 @@
 <script setup>
 import {ref} from "vue";
-import { useLocalePath } from '#imports'
+import {useLocalePath} from '#imports';
 
-const route = useRoute()
-const router= useRouter()
-const localePath = useLocalePath()
+const route = useRoute();
+const router = useRouter();
+const localePath = useLocalePath();
 const toggle = ref(false);
 const toggleSidebar = () => {
     toggle.value = !toggle.value;
 };
 const routes = ref([
     {
-        label:'',
-        name:'',
-        svg:''
+        label: '',
+        name: '',
+        svg: ''
     },
 
-])
+]);
 
 const isActive = (path) => route.path === localePath(path);
 </script>
@@ -29,22 +29,26 @@ const isActive = (path) => route.path === localePath(path);
                 <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/images/icons/logo_1.svg">
             </div>
             <div class="sidebar_container__menu">
-                <div :class="{'sidebar_container__menu__item_active':isActive('/main')}" class="sidebar_container__menu__item" @click="router.push('/main')">
+                <NuxtLink :to="localePath('/main')" :class="{'sidebar_container__menu__item_active':isActive('/main')}"
+                     class="sidebar_container__menu__item">
                     <img class="sidebar_container__menu_icon" src="/images/icons/Home.svg">
                     <div class="sidebar_container__menu_name toggle_name">Главная</div>
-                </div>
-                <div :class="{'sidebar_container__menu__item_active':isActive('/assistants')}" class="sidebar_container__menu__item" @click="router.push('/assistants')">
+                </NuxtLink>
+                <NuxtLink :class="{'sidebar_container__menu__item_active':isActive('/assistants')}"
+                     class="sidebar_container__menu__item" :to="localePath('/assistants')">
                     <img class="sidebar_container__menu_icon" src="/images/icons/Home.svg">
                     <div class="sidebar_container__menu_name toggle_name">Ассистенты</div>
-                </div>
-                <div :class="{'sidebar_container__menu__item_active':isActive('/knowledge')}" class="sidebar_container__menu__item" @click="router.push('/knowledge')">
+                </NuxtLink>
+                <NuxtLink :to="localePath('/knowledge')" :class="{'sidebar_container__menu__item_active':isActive('/knowledge')}"
+                     class="sidebar_container__menu__item">
                     <img class="sidebar_container__menu_icon" src="/images/icons/Book.svg">
                     <div class="sidebar_container__menu_name toggle_name">центр знаний</div>
-                </div>
-                <div :class="{'sidebar_container__menu__item_active':isActive('/test-drive')}" class="sidebar_container__menu__item" @click="router.push('/test-drive')">
+                </NuxtLink>
+                <NuxtLink :to="localePath('/test-drive')" :class="{'sidebar_container__menu__item_active':isActive('/test-drive')}"
+                     class="sidebar_container__menu__item">
                     <img class="sidebar_container__menu_icon" src="/images/icons/Test%20drive.svg">
                     <div class="sidebar_container__menu_name toggle_name">Тест драйв</div>
-                </div>
+                </NuxtLink>
             </div>
 
         </div>
@@ -62,7 +66,8 @@ const isActive = (path) => route.path === localePath(path);
         &__logo {
             @apply flex justify-between items-center min-h-[60px] flex-row-reverse;
             padding: 14.5px 0;
-            .toggle_button{
+
+            .toggle_button {
                 @apply transition-transform duration-300 cursor-pointer;
             }
 
@@ -98,9 +103,11 @@ const isActive = (path) => route.path === localePath(path);
 
     &_toggle {
         @apply max-w-[72px];
+
         .toggle_button {
             transform: scaleX(-1);
         }
+
         .ttc_logo {
             opacity: 0;
             visibility: hidden;
