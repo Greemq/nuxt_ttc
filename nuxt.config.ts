@@ -30,7 +30,7 @@ export default defineNuxtConfig({
         storage: {
             cache: {
                 driver: 'fs',
-                base: './.nitro/cache'
+                base: resolve(__dirname, '.nitro/cache')
             }
         }
     },
