@@ -1,6 +1,7 @@
 import {defineNuxtConfig} from 'nuxt/config';
-
+console.log(process.env.NODE_ENV)
 export default defineNuxtConfig({
+
     css: ["@/assets/css/styles.scss"],
 
     build: {
