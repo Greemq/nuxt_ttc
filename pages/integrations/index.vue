@@ -94,7 +94,7 @@ definePageMeta({
                     </div>
                     <div class="integrations_item__cards__card_divider"></div>
                     <div class="integrations_item__cards__card_buttons">
-                        <div class="left_button" @click="$refs.rightModal.open()">Подключен</div>
+                        <div class="left_button left_button_stopped" @click="$refs.rightModal.open()">Приостановлен</div>
                         <div class="right_button">
                             <span>Перейти</span>
                             <svg fill="none" height="24" viewBox="0 0 24 24" width="24"
@@ -249,7 +249,11 @@ definePageMeta({
 
                     .left_button {
                         @apply rounded-[100px] p-2 text-primary bg-primary-light cursor-pointer text-sm;
+                        &_stopped{
+                            @apply bg-[#FFFCBA] text-dark
+                        }
                     }
+
 
                     .right_button {
                         @apply flex gap-2 text-primary justify-center py-[6px] cursor-pointer text-base ml-auto;

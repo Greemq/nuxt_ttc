@@ -2,6 +2,9 @@
 import {defineAsyncComponent, nextTick, onMounted, ref} from "vue";
 import dayjs from "dayjs";
 import "dayjs/locale/ru";
+import MainDialogs from "~/components/main/MainDialogs.vue";
+import MainDialogStats from "~/components/main/MainDialogStats.vue";
+import MainDialogTime from "~/components/main/MainDialogTime.vue";
 
 dayjs.locale("ru");
 
@@ -9,13 +12,10 @@ definePageMeta({
     layout: "base-layout",
 });
 
-// Ленивое подключение ApexCharts (исключает проблему с SSR)
 const ApexChart = defineAsyncComponent(() => import("vue3-apexcharts"));
 
-// Принудительное обновление графика
 const chartKey = ref(0);
 
-// first col chart
 const currentValue = ref(164);
 const maxValue = ref(389);
 
@@ -50,10 +50,9 @@ const chartOptions1 = ref({
     stroke: {
         lineCap: 'round'
     },
-    colors: ["#50B748"], // Цвет круга
+    colors: ["#50B748"],
 });
 
-// Перерисовываем после монтирования
 onMounted(() => {
     nextTick(() => {
         chartKey.value++;
@@ -133,7 +132,7 @@ const chartOptions2 = computed(() => ({
         type: "bar",
         stacked: true,
         toolbar: {show: false},
-        height: 226,
+        height: 200,
         tooltip: {enabled: false},
         animations: {
             enabled: true,
@@ -276,7 +275,6 @@ const chartOptions3 = ref({
                 <div class="graphs_item__head__label">Количество сообщений</div>
                 <ui-select :options="[{ id: 1, name: 'option' }, { id: 2, name: 'option1' }]"/>
             </div>
-
             <div id="chart" class="graphs_item__chart">
                 <ClientOnly>
                     <ApexChart :key="chartKey" :options="chartOptions1" :series="series1" height="200px"
@@ -286,12 +284,12 @@ const chartOptions3 = ref({
             <div class="flex flex-col gap-2">
                 <div class="flex items-center py-1 gap-1">
                     <div class="w-3 h-3 rounded-full border-2 border-primary"></div>
-                    <span class="text-gray text-sm">новые</span>
+                    <span class="text-gray text-sm">Новые</span>
                     <span>{{ currentValue }}</span>
                 </div>
                 <div class="flex items-center py-1 gap-1">
                     <div class="w-3 h-3 rounded-full border-2 border-gray"></div>
-                    <span class="text-gray">вернувшиеся</span>
+                    <span class="text-gray text-sm">Вернувшиеся</span>
                     <span>{{ maxValue - currentValue }}</span>
                 </div>
             </div>
@@ -302,22 +300,17 @@ const chartOptions3 = ref({
                 <ui-select v-model="selectedFilter" :options="filterTypes" class="w-40"/>
             </div>
             <div class="graphs_item__checkboxes">
-
                 <ui-checkbox v-for="item in socials"
                              v-model="chartCheckboxModel"
                              :custom-color="item.color"
                              :item="item"
                              option-label="label"/>
-
             </div>
-
             <ClientOnly>
                 <ApexChart :key="'1_'+chartKey" :options="chartOptions2" :series="filteredSeries2" class="chart"
                            height="226px"
                            type=""/>
             </ClientOnly>
-
-
         </div>
         <div class="graphs_item graphs_item__short">
             <div class="graphs_item__head">
@@ -326,7 +319,7 @@ const chartOptions3 = ref({
             </div>
             <div class="flex items-center justify-center flex-col pt-8 h-full">
                 <ClientOnly>
-                    <ApexChart :options="chartOptions3" :series="series3" class="grow" height="100%" type="radialBar"/>
+                    <ApexChart width="250px" :options="chartOptions3" :series="series3" class="grow" height="80%" type="radialBar"/>
                 </ClientOnly>
                 <div class="text-center text-sm text-gray">
                     На 5% меньше по сравнению с прошлым периодом
@@ -335,36 +328,36 @@ const chartOptions3 = ref({
         </div>
     </div>
     <div class="stats">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
+        <MainDialogs class="stats_item lg:col-span-5"/>
+        <MainDialogStats class="lg:col-span-4"/>
+        <MainDialogTime class="stats_item lg:col-span-3"/>
     </div>
 </template>
 
 <style scoped>
-.stats{
-    @apply grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_254px] gap-6 w-full;
-    div{
+.stats {
+    @apply grid lg:grid-cols-12 gap-6 w-full md:grid-cols-1;
+
+    &_item {
         @apply bg-white rounded-3xl p-6
     }
 }
+
 .graphs {
-    @apply grid lg:grid-cols-[minmax(0,254px)_1fr_minmax(0,254px)] gap-6 w-full md:grid-cols-1;
+    @apply grid lg:grid-cols-12 gap-6 w-full md:grid-cols-1;
 
     &_item {
         @apply bg-white rounded-3xl p-6 flex flex-col;
 
         &__short {
-            @apply lg:max-w-[254px] w-full md:max-w-full;
+            @apply  w-full md:max-w-full lg:col-span-3;
         }
 
         &__long {
-            @apply grow flex flex-col gap-6;
+            @apply grow flex flex-col gap-6 lg:col-span-6;
 
             .chart {
                 @apply min-h-[226px] max-h-[226px] h-[226px];
-
-
             }
         }
 
