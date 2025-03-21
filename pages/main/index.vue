@@ -130,6 +130,7 @@ const xAxisCategories = computed(() => {
 const chartOptions2 = computed(() => ({
     chart: {
         type: "bar",
+        redrawOnWindowResize: true,
         stacked: true,
         toolbar: {show: false},
         height: 200,
@@ -236,7 +237,7 @@ const chartOptions3 = ref({
                 background: "#e0e0e0",
             },
             hollow: {
-                size: "80%"
+                size: "75%"
             },
             dataLabels: {
                 name: {show: false},
@@ -319,7 +320,8 @@ const chartOptions3 = ref({
             </div>
             <div class="flex items-center justify-center flex-col pt-8 h-full">
                 <ClientOnly>
-                    <ApexChart width="250px" :options="chartOptions3" :series="series3" class="grow" height="80%" type="radialBar"/>
+                    <ApexChart :options="chartOptions3" :series="series3" class="grow" height="80%" type="radialBar"
+                               width="250px"/>
                 </ClientOnly>
                 <div class="text-center text-sm text-gray">
                     На 5% меньше по сравнению с прошлым периодом
@@ -350,7 +352,7 @@ const chartOptions3 = ref({
         @apply bg-white rounded-3xl p-6 flex flex-col;
 
         &__short {
-            @apply  w-full md:max-w-full lg:col-span-3;
+            @apply w-full md:max-w-full lg:col-span-3;
         }
 
         &__long {

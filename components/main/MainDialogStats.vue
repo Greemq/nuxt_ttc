@@ -38,8 +38,7 @@ const val1 = ref(80);
                 <div class="main_dialog_stats_item_body__stats w-1/2">
                     <div class="main_dialog_stats_item_body__stats__item">
 <!--                        <div class="main_dialog_stats_item_body__stats__item__icon !border-gray-light"></div>-->
-                        <div class="main_dialog_stats_item_body__stats__item__title">На 5% меньше по сравнению
-с прошлым периодом</div>
+                        <div class="main_dialog_stats_item_body__stats__item__title">На 5% меньше по сравнению с прошлым периодом</div>
 <!--                        <div class="main_dialog_stats_item_body__stats__item__value">6</div>-->
                     </div>
                 </div>
