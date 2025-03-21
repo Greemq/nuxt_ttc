@@ -63,7 +63,7 @@ const isActive = (path) => route.path === localePath(path);
 <style scoped>
 
 .sidebar {
-    @apply bg-white transition-all duration-300 overflow-hidden max-w-[236px] w-full border-r-gray-light border-r shrink-0;
+    @apply bg-white transition-all duration-300 overflow-hidden max-w-[236px] w-full border-r-gray-light border-r shrink-0 hidden sm:block;
 
     &_container {
         @apply flex flex-col gap-4 h-full px-4 ;

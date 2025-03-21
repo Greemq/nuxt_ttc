@@ -15,7 +15,7 @@ const slots = useSlots();
 
 <template>
     <div class="flex h-screen overflow-auto">
-        <sidebar v-if="!sidebarHidden"/>
+        <sidebar v-if="!sidebarHidden" />
         <div class="flex flex-col flex-grow">
             <ui-header/>
             <main class="bg-bg flex flex-col px-6 py-5 gap-6 h-full overflow-y-auto">
