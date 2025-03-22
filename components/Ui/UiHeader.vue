@@ -5,7 +5,7 @@
 <template>
     <header class="nav">
         <div class="nav_right">
-            <div class="nav_right__profile">
+            <div class="nav_right__profile cursor-pointer" @click="navigateTo('/profile')">
                 <div class="nav_right__profile_1">
                     <div class="nav_right__profile_avatar">
                         <span>A</span>

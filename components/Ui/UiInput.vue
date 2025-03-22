@@ -33,7 +33,7 @@ const handleLabelClick = () => {
 <template>
     <div :class="{'error':error,'disabled':disabled}" class="input-form">
         <div class="flex justify-between">
-            <label v-if="label">{{ props.label }}</label>
+            <label class="first-letter:uppercase" v-if="label">{{ props.label }}</label>
             <label v-if="label2" class="text-primary cursor-pointer"
                    @click="handleLabelClick()">{{ props.label2 }}</label>
         </div>

@@ -1,3 +1,15 @@
 {
-  "welcome": "Welcome"
+  "profile": {
+    "firstName": "имя",
+    "lastName": "фамилия",
+    "phoneNumber": "номер телефона",
+    "email": "e-mail",
+    "company": "компания",
+    "job": "должность",
+    "account_details": "реквизиты",
+    "bin": "БИН",
+    "bik": "БИК",
+    "checking_account": "расчетный счет",
+    "registered_address": "юридический адрес"
+  }
 }

@@ -114,15 +114,15 @@ const xAxisCategories = computed(() => {
     let type = selectedFilter.value;
     if (type === 3) {
         return Array.from({length: 7}, (_, i) =>
-            today.subtract(6 - i, "day").format("DD.MM.YY")
+            today.subtract(6 - i, "day").format("DD.MM")
         );
     } else if (type === 2) {
         return Array.from({length: 14}, (_, i) =>
-            today.subtract(6 - i, "day").format("DD.MM.YY")
+            today.subtract(6 - i, "day").format("DD.MM")
         );
     } else {
         return Array.from({length: 30}, (_, i) =>
-            today.subtract(29 - i, "day").format("DD.MM.YY")
+            today.subtract(29 - i, "day").format("DD.MM")
         );
     }
 });
@@ -164,7 +164,7 @@ const chartOptions2 = computed(() => ({
     xaxis: {
         categories: xAxisCategories.value,
         labels: {
-            rotate: -30,
+            rotate: -60,
             rotateAlways: true
         }
     },
@@ -331,8 +331,8 @@ const chartOptions3 = ref({
     </div>
     <div class="stats">
         <MainDialogs class="stats_item lg:col-span-5"/>
-        <MainDialogStats class="lg:col-span-4"/>
-        <MainDialogTime class="stats_item lg:col-span-3"/>
+        <MainDialogStats class="lg:col-span-5"/>
+        <MainDialogTime class="stats_item lg:col-span-2"/>
     </div>
 </template>
 
@@ -352,11 +352,11 @@ const chartOptions3 = ref({
         @apply bg-white rounded-3xl p-6 flex flex-col;
 
         &__short {
-            @apply w-full md:max-w-full lg:col-span-3;
+            @apply w-full md:max-w-full lg:col-span-2;
         }
 
         &__long {
-            @apply grow flex flex-col gap-6 lg:col-span-6;
+            @apply grow flex flex-col gap-6 lg:col-span-8;
 
             .chart {
                 @apply min-h-[226px] max-h-[226px] h-[226px];
