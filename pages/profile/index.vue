@@ -5,7 +5,17 @@ import ProfileSubscription from "~/components/profile/ProfileSubscription.vue";
 definePageMeta({
     layout: "base-layout",
 });
+const route = useRoute();
+onMounted(() => {
+    if (route.query.tab) {
+        tab.value = route.query.tab;
+    }
+});
+
 const tab = ref(1);
+watch(() => route.query.tab, (newTab) => {
+  tab.value = newTab || '1';
+});
 const tabs = ref([
     {
         id: 1,
@@ -26,7 +36,7 @@ const tabs = ref([
 
 <template>
     <breadcrumbs label="Аккаунт"/>
-    <ui-tabs :tabs="tabs" v-model="tab"/>
+    <ui-tabs v-model="tab" :tabs="tabs"/>
     <ProfileAccount v-if="tab==1"/>
     <profile-employees v-else-if="tab==2"/>
     <ProfileSubscription v-else-if="tab==3"/>

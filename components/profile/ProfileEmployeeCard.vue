@@ -90,7 +90,7 @@ const employeeInputs = computed(() => [
                             fill="#1A1B1B"/>
                     </svg>
                     <ui-dropdown ref="dropdown" class="w-0 h-0">
-                        <div class="py-2 px-4 hover:bg-gray-light cursor-pointer" @click="$emit('editEmployee',item)">Редактировать</div>
+                        <div class="w-48 py-2 px-4 hover:bg-gray-light cursor-pointer" @click="$emit('editEmployee',item)">Редактировать</div>
                         <div class="py-2 px-4 hover:bg-gray-light cursor-pointer" @click="$refs.deleteModal.open()">
                             Удалить
                         </div>

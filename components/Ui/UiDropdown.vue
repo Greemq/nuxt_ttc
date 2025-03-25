@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
     @apply relative inline-block text-left;
 
     &_list {
-        @apply absolute w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 overflow-hidden;
+        @apply absolute rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 overflow-hidden;
         right: -10px;
         top: 0;
 
