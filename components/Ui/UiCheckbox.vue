@@ -27,7 +27,7 @@ const toggleCheckbox = () => {
 const checkboxClasses  = computed(() => {
     let color = props.customColor;
     // if (!modelValue.includes(props.item[props.optionValue])) {
-    //     return ""; // Если чекбокс не отмечен, классы не добавляются
+    //     return "";
     // }
     if (!color) {
         return 'border-gray focus:border-primary hover:border-primary !bg-primary';

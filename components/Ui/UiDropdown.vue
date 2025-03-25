@@ -3,14 +3,15 @@
         <div
             v-if="isVisible"
             class="dropdown_list" @mouseleave="close">
-            <div aria-orientation="vertical" class="py-1" role="menu">
-                <button
-                    v-for="(option, index) in options"
-                    :key="index"
-                    class="dropdown_list__button"
-                    @click="selectOption(option[optionValue])">
-                    {{ option[optionLabel] }}
-                </button>
+            <div aria-orientation="vertical" role="menu">
+<!--                <button-->
+<!--                    v-for="(option, index) in options"-->
+<!--                    :key="index"-->
+<!--                    class="dropdown_list__button"-->
+<!--                    @click="selectOption(option[optionValue])">-->
+<!--                    {{ option[optionLabel] }}-->
+<!--                </button>-->
+                <slot></slot>
             </div>
         </div>
     </div>
@@ -71,13 +72,10 @@ onBeforeUnmount(() => {
     @apply relative inline-block text-left;
 
     &_list {
-        @apply absolute w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10;
-        right: 12px;
-        top: -10px;
+        @apply absolute w-48 rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10 overflow-hidden;
+        right: -10px;
+        top: 0;
 
-        &__button {
-            @apply w-full text-left px-4 py-2 hover:bg-gray-light;
-        }
     }
 }
 

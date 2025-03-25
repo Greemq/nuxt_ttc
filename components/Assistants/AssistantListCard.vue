@@ -5,31 +5,30 @@ const isVisible = ref(false);
 defineProps({
     name: {type: String}
 });
+
 function getRandomText() {
-  const words = [
-    "Lorem", "ipsum", "dolor", "sit", "amet",
-    "consectetur", "adipiscing", "elit", "sed", "do",
-    "eiusmod", "tempor", "incididunt", "ut", "labore",
-    "et", "dolore", "magna", "aliqua", "ut", "enim",
-    "ad", "minim", "veniam", "quis", "nostrud", "exercitation",
-    "ullamco", "laboris", "nisi", "ut", "aliquip", "ex",
-    "ea", "commodo", "consequat", "duis", "aute", "irure",
-    "dolor", "in", "reprehenderit", "in", "voluptate", "velit",
-    "esse", "cillum", "dolore", "eu", "fugiat", "nul"
-  ];
+    const words = [
+        "Lorem", "ipsum", "dolor", "sit", "amet",
+        "consectetur", "adipiscing", "elit", "sed", "do",
+        "eiusmod", "tempor", "incididunt", "ut", "labore",
+        "et", "dolore", "magna", "aliqua", "ut", "enim",
+        "ad", "minim", "veniam", "quis", "nostrud", "exercitation",
+        "ullamco", "laboris", "nisi", "ut", "aliquip", "ex",
+        "ea", "commodo", "consequat", "duis", "aute", "irure",
+        "dolor", "in", "reprehenderit", "in", "voluptate", "velit",
+        "esse", "cillum", "dolore", "eu", "fugiat", "nul"
+    ];
 
-  // Генерация случайного количества слов от 2 до 10
-  const numberOfWords = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
 
-  // Создание массива случайных слов
-  const randomWords = [];
-  for (let i = 0; i < numberOfWords; i++) {
-    const randomIndex = Math.floor(Math.random() * words.length);
-    randomWords.push(words[randomIndex]);
-  }
+    const numberOfWords = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
 
-  // Объединение слов в строку
-  return randomWords.join(' ');
+    const randomWords = [];
+    for (let i = 0; i < numberOfWords; i++) {
+        const randomIndex = Math.floor(Math.random() * words.length);
+        randomWords.push(words[randomIndex]);
+    }
+
+    return randomWords.join(' ');
 }
 </script>
 
@@ -63,7 +62,8 @@ function getRandomText() {
                 <ui-toggle label="Активен"/>
             </div>
             <div class="assistant_cols_6">
-                <svg @click="$refs.dropdown.open()" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                     @click="$refs.dropdown.open()">
                     <path
                         d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
                         fill="#1A1B1B"/>
@@ -74,7 +74,12 @@ function getRandomText() {
                         d="M12 19.5C12.8284 19.5 13.5 18.8284 13.5 18C13.5 17.1716 12.8284 16.5 12 16.5C11.1716 16.5 10.5 17.1716 10.5 18C10.5 18.8284 11.1716 19.5 12 19.5Z"
                         fill="#1A1B1B"/>
                 </svg>
-                <ui-dropdown ref="dropdown" :options="[1,2,3,4,5]"/>
+                <ui-dropdown ref="dropdown">
+                    <div class="py-2 px-4 hover:bg-gray-light cursor-pointer">Редактировать</div>
+                    <div class="py-2 px-4 hover:bg-gray-light cursor-pointer">
+                        Удалить
+                    </div>
+                </ui-dropdown>
 
             </div>
         </div>
@@ -87,7 +92,7 @@ function getRandomText() {
                 <div class="info_body_items">
                     <div v-for="item in 7" class="info_body_items__item">
                         <img src="/images/icons/Instagram.svg">
-                        <span> {{ getRandomText()}}</span>
+                        <span> {{ getRandomText() }}</span>
                     </div>
                 </div>
 
@@ -115,14 +120,16 @@ function getRandomText() {
             .info_body_items {
                 @apply flex flex-wrap gap-4;
 
-                &__item{
+                &__item {
                     @apply border border-gray-light p-2 gap-1 flex items-center;
                     max-height: 48px;
                     border-radius: 100px;
-                    img{
+
+                    img {
                         @apply w-8 h-8
                     }
-                    span{
+
+                    span {
                         @apply text-base font-normal
                     }
                 }
@@ -145,7 +152,8 @@ function getRandomText() {
     &_title {
         @apply text-gray-dark;
     }
-    &_1,&_2,&_3,&_4,&_5,&_6{
+
+    &_1, &_2, &_3, &_4, &_5, &_6 {
         @apply h-14
     }
 

@@ -37,8 +37,11 @@ const handleSelect = (option) => {
         <div v-for="(item,index) in 17" class="docs_item">
             <div class="docs_item__control">
                 <img alt="" src="/images/icons/Dots.svg" @click="openDropdown(index)">
-                <ui-dropdown :ref="el => dropdownRefs[index] = el" ref="dropdownRefs" :options="[{id:1,name:'удалить'}]"
-                             @select="handleSelect"/>
+                <ui-dropdown ref="dropdownRefs">
+                    <div class="py-2 px-4 hover:bg-gray-light cursor-pointer" @click="handleSelect(1)">
+                        Удалить
+                    </div>
+                </ui-dropdown>
             </div>
             <div class="docs_item__icon">
                 <img :src="useNuxtApp().$getFileIconPath(getRandomFileType())" alt="">

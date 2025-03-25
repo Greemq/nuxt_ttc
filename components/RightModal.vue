@@ -2,26 +2,35 @@
 import {ref} from 'vue';
 
 const isVisible = ref(false);
-
+const emit = defineEmits(['close']);
 const open = () => {
     isVisible.value = true;
 };
 
 const close = () => {
     isVisible.value = false;
+    emit('close');
 };
 
-defineProps({
+const props = defineProps({
     title: String,
     size: {type: String, default: 'w-1/3'}
 });
+const sizeClasses = {
+    'w-2/3': 'lg:w-2/3',
+    'w-1/3': 'lg:w-1/3',
+    'w-1/2': 'lg:w-1/2',
+    'w-full': 'lg:w-full',
+    'w-auto': 'lg:w-auto'
+};
 
+const modalSize = computed(() => sizeClasses[props.size] || 'lg:w-1/3');
 defineExpose({open, close});
 </script>
 
 <template>
     <div v-if="isVisible" class="modal right">
-        <div :class="size" class="p-6 h-full">
+        <div :class="modalSize" class="p-6 h-full w-full md:w-1/2">
             <div class="modal_body">
                 <div class="modal_body__title">
                     <span v-if="title">{{ title }}</span>
