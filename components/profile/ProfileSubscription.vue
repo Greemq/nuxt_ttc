@@ -267,7 +267,7 @@ const activeButton = ref(1);
 }
 
 .tarifs {
-    @apply grid h-full bg-white rounded-3xl lg:grid-cols-3 p-6 gap-6 grid-cols-1;
+    @apply grid bg-white rounded-3xl lg:grid-cols-3 p-6 gap-6 grid-cols-1;
 
     &_item {
         @apply col-span-1 border border-gray-light rounded-3xl  flex flex-col;
