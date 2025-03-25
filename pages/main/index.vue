@@ -127,60 +127,62 @@ const xAxisCategories = computed(() => {
     }
 });
 
-const chartOptions2 = computed(() => ({
-    chart: {
-        type: "bar",
-        redrawOnWindowResize: true,
-        stacked: true,
-        toolbar: {show: false},
-        height: 200,
-        tooltip: {enabled: false},
-        animations: {
-            enabled: true,
-            speed: 800,
-            easing: 'linear',
-            animateGradually: {
+const chartOptions2 = computed(() => {
+    const colorsMap = socials.value.reduce((acc, s) => {
+        acc[s.id] = s.color;
+        return acc;
+    }, {});
+
+    return {
+        chart: {
+            type: "bar",
+            redrawOnWindowResize: false,
+            stacked: true,
+            toolbar: { show: false },
+            tooltip: { enabled: false },
+            animations: {
                 enabled: true,
-                delay: 50
+                speed: 600,
+                easing: "bounce",
+                animateGradually: {
+                    enabled: false,
+                    delay: 30
+                },
+                dynamicAnimation: {
+                    enabled: false,
+                    delay:600
+                }
             },
-            dynamicAnimation: {
-                enabled: true,
-                speed: 500
+            parentHeightOffset: 0,
+        },
+        dataLabels: {
+            enabled: false
+        },
+        plotOptions: {
+            bar: {
+                horizontal: false,
+                borderRadius: 4,
+                startingShape: "flat"
+            },
+        },
+        legend: { show: false },
+        xaxis: {
+            categories: xAxisCategories.value,
+            labels: {
+                rotate: -60,
+                rotateAlways: true
             }
         },
-        parentHeightOffset: 0,
-    },
-    dataLabels: {
-        enabled: false
-    },
-    plotOptions: {
-        bar: {
-            horizontal: false,
-            borderRadius: 4,
-            startingShape: 'flat'
+        tooltip: {
+            enabled: false
         },
-    },
-    legend: {show: false},
-    xaxis: {
-        categories: xAxisCategories.value,
-        labels: {
-            rotate: -60,
-            rotateAlways: true
-        }
-    },
-    tooltip: {
-        enabled: false
-    },
-    grid: {
-        padding: {left: 0, right: -10, top: 0, bottom: -20},
-    },
-
-    fill: {opacity: 1},
-    colors: filteredSeries2.value.map(series => {
-        const social = socials.value.find(s => s.id === series.id);
-        return social ? social.color : "#000";
-    }),
-}));
+        grid: {
+            padding: { left: 0, right: -10, top: 0, bottom: -20 },
+        },
+        fill: { opacity: 1 },
+        colors: filteredSeries2.value.map(series => colorsMap[series.id] || "#000"),
+    };
+});
 
 const filterTypes = ref([
     {
@@ -212,11 +214,12 @@ const series2 = computed(() => {
     }));
 });
 
-const filteredSeries2 = computed(() => {
-    return series2.value.filter(series =>
-        chartCheckboxModel.value.some(selected => selected === series.id)
-    );
-});
+
+const selectedSet = computed(() => new Set(chartCheckboxModel.value));
+
+const filteredSeries2 = computed(() =>
+    series2.value.filter(series => selectedSet.value.has(series.id))
+);
 
 
 const currentValue2 = ref(174);
@@ -266,6 +269,7 @@ const chartOptions3 = ref({
     },
     colors: ["#48B7A8"]
 });
+
 </script>
 
 <template>
@@ -321,7 +325,7 @@ const chartOptions3 = ref({
             <div class="flex items-center justify-center flex-col pt-8 h-full">
                 <ClientOnly>
                     <ApexChart :options="chartOptions3" :series="series3" class="grow" height="80%" type="radialBar"
-                               width="250px"/>
+                               width="240px"/>
                 </ClientOnly>
                 <div class="text-center text-sm text-gray">
                     На 5% меньше по сравнению с прошлым периодом
