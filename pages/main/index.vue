@@ -107,7 +107,7 @@ const socials = ref([
     },
 
 ]);
-const chartCheckboxModel = ref([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+const chartCheckboxModel = ref([1, 2, 4, 7]);
 
 const xAxisCategories = computed(() => {
     const today = dayjs();
@@ -198,7 +198,7 @@ const filterTypes = ref([
         name: 'неделя'
     },
 ]);
-const selectedFilter = ref(3);
+const selectedFilter = ref(2);
 
 const generateRandomData = (length) => {
     return Array.from({length}, () => Math.floor(Math.random() * 100));
@@ -313,7 +313,7 @@ const chartOptions3 = ref({
             </div>
             <ClientOnly>
                 <ApexChart :key="'1_'+chartKey" :options="chartOptions2" :series="filteredSeries2" class="chart"
-                           height="226px"
+                            height="300px"
                            type=""/>
             </ClientOnly>
         </div>
