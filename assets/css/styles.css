@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 .btn {
   @apply px-4 py-2 flex cursor-pointer rounded-lg items-center text-base;
@@ -195,6 +196,31 @@ textarea {
   font-display: swap;
   font-style: normal;
 }
+.custom-toast {
+  @apply max-w-none !min-w-0 !min-h-0 flex items-center gap-2 rounded-lg;
+  padding: 12px !important;
+}
+
+.Vue-Toastification__icon {
+  margin: 0 !important;
+}
+
+/* Кастомный фон для успеха */
+.Vue-Toastification__toast--success {
+  @apply text-white !bg-dark text-base;
+}
+.Vue-Toastification__toast--success svg {
+  @apply text-primary w-6 h-6;
+}
+
+/* Ошибка */
+.Vue-Toastification__toast--error {
+  @apply text-white !bg-error;
+}
+.Vue-Toastification__toast--error svg {
+  @apply w-6 h-6;
+}
+
 body {
   font-family: "Golos UI", sans-serif;
 }

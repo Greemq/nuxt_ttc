@@ -23,42 +23,48 @@ const handleSteps = (val) => {
 const formStep1 = ref({});
 const formStep2 = ref(['name1', 'name2', 'name3'
 ]);
-const formStep3 = ref([])
-const formStep4 = ref([])
+const formStep3 = ref([]);
+const formStep4 = ref([]);
 const messages = ref([
     {
-        type:1,
-        title:'title',
-        time:'00:00'
+        type: 1,
+        title: 'title',
+        time: '00:00'
     },
     {
-        type:2,
-        title:'title2',
-        time:'00:01'
+        type: 2,
+        title: 'title2',
+        time: '00:01'
     },
     {
-        type:1,
-        title:'titl3',
-        time:'00:02'
+        type: 1,
+        title: 'titl3',
+        time: '00:02'
     },
     {
-        type:2,
-        title:'title4',
-        time:'00:03'
+        type: 2,
+        title: 'title4',
+        time: '00:03'
     },
     {
-        type:1,
-        title:'title5',
-        time:'00:04'
+        type: 1,
+        title: 'title5',
+        time: '00:04'
     },
     {
-        type:2,
-        title:'title6',
-        time:'00:05'
+        type: 2,
+        title: 'title6',
+        time: '00:05'
     },
 
 
-])
+]);
+const {$toast} = useNuxtApp();
+
+onMounted(() => {
+    $toast.success("успешное уведомление");
+    $toast.error("уведомление ошибки");
+});
 </script>
 
 <template>
@@ -80,13 +86,14 @@ const messages = ref([
             <AssistantListCard v-for="item in 10" :name="item"/>
         </div>
     </div>
-    <right-modal ref="createModal" title="label" size="w-2/3">
+    <right-modal ref="createModal" size="w-2/3" title="label">
         <div class="flex h-full">
             <div class="w-2/3 flex flex-col gap-4">
                 <assistants-assistant-step1 v-if="step==1" v-model="formStep1"/>
                 <assistants-assistant-step2 v-else-if="step==2" v-model="formStep2"/>
                 <assistants-assistant-step3 v-else-if="step==3" v-model="formStep3"/>
-                <AssistantsAssistantStep4 :messages="messages" v-else-if="step==4" v-model="formStep4" title="Протестируйте вашего ассистента"/>
+                <AssistantsAssistantStep4 v-else-if="step==4" v-model="formStep4" :messages="messages"
+                                          title="Протестируйте вашего ассистента"/>
             </div>
             <div class="w-1/3">
                 <assistants-assistant-steps :step="step" :steps="steps"/>

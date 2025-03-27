@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* Общие стили для всех тостов */
+.Vue-Toastification__toast {
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+}
+
+/* Успешный тост */
+.toast-success {
+  background: #16a34a !important;
+  color: white !important;
+  border: 2px solid #22c55e !important;
+}
+
+/* Ошибка */
+.toast-error {
+  background: #b91c1c !important;
+  color: white !important;
+  border: 2px solid #dc2626 !important;
+}
+
+/* Информация */
+.toast-info {
+  background: #2563eb !important;
+  color: white !important;
+  border: 2px solid #3b82f6 !important;
+}
+
+/* Предупреждение */
+.toast-warning {
+  background: #d97706 !important;
+  color: white !important;
+  border: 2px solid #facc15 !important;
+}

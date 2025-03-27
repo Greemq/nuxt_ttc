@@ -1,0 +1,25 @@
+.custom-toast {
+  @apply max-w-none !min-w-0 !min-h-0 flex items-center gap-2 rounded-lg;
+  padding: 12px !important;
+}
+
+.Vue-Toastification__icon{
+  margin: 0!important;
+}
+
+/* Кастомный фон для успеха */
+.Vue-Toastification__toast--success {
+  @apply text-white !bg-dark text-base;
+  svg {
+    @apply text-primary w-6 h-6;
+  }
+}
+
+/* Ошибка */
+.Vue-Toastification__toast--error {
+  @apply  text-white !bg-error;
+  svg {
+    @apply w-6 h-6;
+  }
+}
+

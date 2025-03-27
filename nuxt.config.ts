@@ -23,13 +23,13 @@ export default defineNuxtConfig({
             },
         },
         // transpile: ["flowbite"]
+        transpile: ['vue-toastification'],
     },
 
     // pages: false,
     devtools: false,
 
     modules: ['@nuxtjs/i18n', '@nuxtjs/tailwindcss', '@nuxt/image'],
-
     i18n: {
         locales: [
             {code: 'ru', name: 'Рус', file: 'ru.json'},

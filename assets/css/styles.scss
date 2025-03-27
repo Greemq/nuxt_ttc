@@ -1,10 +1,12 @@
 @use "UiKit.scss";
 @use "globals.scss";
-
+@use "toast.scss";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 body {
-    font-family: 'Golos UI', sans-serif;
+  font-family: 'Golos UI', sans-serif;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
