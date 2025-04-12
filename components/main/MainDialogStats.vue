@@ -55,7 +55,7 @@ const val1 = ref(80);
     @apply w-full flex flex-col gap-6 h-full;
 
     &_item {
-        @apply bg-white rounded-3xl p-6 grow flex flex-col gap-6;
+        @apply bg-white rounded-3xl p-6 grow flex flex-col gap-6 dark:bg-dark-white;
 
         &_head {
             @apply flex gap-4;

@@ -36,7 +36,20 @@ const handleSelect = (option) => {
     <div class="docs">
         <div v-for="(item,index) in 17" class="docs_item">
             <div class="docs_item__control">
-                <img alt="" src="/images/icons/Dots.svg" @click="openDropdown(index)">
+                <!--                <img alt="" src="/images/icons/Dots.svg" @click="openDropdown(index)">-->
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
+                     @click="openDropdown(index)">
+                    <path
+                        d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
+                        fill="currentColor"/>
+                    <path
+                        d="M12 7.5C12.8284 7.5 13.5 6.82843 13.5 6C13.5 5.17157 12.8284 4.5 12 4.5C11.1716 4.5 10.5 5.17157 10.5 6C10.5 6.82843 11.1716 7.5 12 7.5Z"
+                        fill="currentColor"/>
+                    <path
+                        d="M12 19.5C12.8284 19.5 13.5 18.8284 13.5 18C13.5 17.1716 12.8284 16.5 12 16.5C11.1716 16.5 10.5 17.1716 10.5 18C10.5 18.8284 11.1716 19.5 12 19.5Z"
+                        fill="currentColor"/>
+                </svg>
+
                 <ui-dropdown ref="dropdownRefs">
                     <div class="py-2 px-4 hover:bg-gray-light cursor-pointer" @click="handleSelect(1)">
                         Удалить
@@ -59,7 +72,8 @@ const handleSelect = (option) => {
 
         <div class="flex flex-col gap-2">
             <div class="flex gap-3">
-                <svg class="w-6 h-6 text-error" fill="none" height="24" viewBox="0 0 24 24" width="24"
+                <svg class="w-6 h-6 text-error dark:text-[#B61452]" fill="none" height="24" viewBox="0 0 24 24"
+                     width="24"
                      xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.8 7.20001H5.19994" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                     <path
@@ -68,7 +82,7 @@ const handleSelect = (option) => {
                     <path d="M9.73653 5.6C10.066 4.66785 10.955 4 12 4C13.0449 4 13.9339 4.66785 14.2634 5.6"
                           stroke="currentColor" stroke-linecap="round" stroke-width="1.5"/>
                 </svg>
-                <div class="font-bold text-xl">Удаление документа</div>
+                <div class="font-bold text-xl dark:text-dark-dark">Удаление документа</div>
             </div>
             <div class="flex gap-3">
                 <div class="w-6 h-6 min-w-6">
@@ -96,25 +110,25 @@ const handleSelect = (option) => {
     @apply flex w-full gap-4 items-center ;
 
     &_item {
-        @apply rounded-xl py-1 px-4 text-gray-dark bg-gray-light cursor-pointer
+        @apply rounded-xl py-1 px-4 text-gray-dark bg-gray-light cursor-pointer dark:bg-dark-white
     }
 
     .active {
-        @apply border-primary border text-primary bg-primary-light
+        @apply border-primary border text-primary bg-primary-light dark:bg-dark-bg;
     }
 }
 
 .docs {
-    @apply grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 bg-white rounded-3xl p-6 gap-6;
+    @apply grid lg:grid-cols-5 md:grid-cols-3 grid-cols-1 bg-white rounded-3xl p-6 gap-6 dark:bg-dark-white;
 
     &_item {
-        @apply flex flex-col items-center justify-center p-4 gap-2 border border-gray-light rounded-2xl relative;
+        @apply flex flex-col items-center justify-center p-4 gap-2 border border-gray-light rounded-2xl relative dark:border-dark-gray-light;
 
         &__control {
             @apply absolute right-0 top-0 p-4;
 
-            img {
-                @apply w-6 h-6 cursor-pointer;
+            svg {
+                @apply w-6 h-6 cursor-pointer dark:text-dark-dark;
             }
         }
 
@@ -130,7 +144,7 @@ const handleSelect = (option) => {
             @appy flex flex-col gap-1 items-center justify-center text-center w-full;
 
             div {
-                @apply text-center;
+                @apply text-center dark:text-dark-dark;
             }
 
             div:first-child {

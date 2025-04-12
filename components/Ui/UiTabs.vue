@@ -24,7 +24,7 @@ const updateModelValue = (val) => {
     @apply flex gap-4 ;
 
     .active {
-        @apply text-dark;
+        @apply text-dark dark:text-dark-dark;
     }
 
     .active_line {

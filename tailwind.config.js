@@ -1,4 +1,5 @@
 module.exports = {
+    darkMode: 'class',
     content: [
         // "./components/**/*.{js,vue,ts}",
         // "./layouts/**/*.vue",
@@ -23,6 +24,11 @@ module.exports = {
                 'success': '#1ECD92',
                 'error': '#FF428A',
                 'info': '#1B80FC',
+                'dark-white':'#383838',
+                'dark-bg':'#2C2C2C',
+                'dark-gray-light':"#444444",
+                'dark-dark':'#F6F6F6',
+                'dark-black':'#1A1B1B'
             },
             fontFamily: {
                 golos: ['Golos UI', 'sans-serif'],

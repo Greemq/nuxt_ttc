@@ -48,7 +48,7 @@ function getRandomText() {
                 >
                     <path
                         d="M17.6 9.60001L12 14.4L6.4 9.60001"
-                        stroke="#1A1B1B"
+                        stroke="currentColor"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="1.5"
@@ -66,17 +66,18 @@ function getRandomText() {
                      @click="$refs.dropdown.open()">
                     <path
                         d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
-                        fill="#1A1B1B"/>
+                        fill="currentColor"/>
                     <path
                         d="M12 7.5C12.8284 7.5 13.5 6.82843 13.5 6C13.5 5.17157 12.8284 4.5 12 4.5C11.1716 4.5 10.5 5.17157 10.5 6C10.5 6.82843 11.1716 7.5 12 7.5Z"
-                        fill="#1A1B1B"/>
+                        fill="currentColor"/>
                     <path
                         d="M12 19.5C12.8284 19.5 13.5 18.8284 13.5 18C13.5 17.1716 12.8284 16.5 12 16.5C11.1716 16.5 10.5 17.1716 10.5 18C10.5 18.8284 11.1716 19.5 12 19.5Z"
-                        fill="#1A1B1B"/>
+                        fill="currentColor"/>
                 </svg>
                 <ui-dropdown ref="dropdown">
-                    <div class="py-2 px-4 hover:bg-gray-light cursor-pointer">Редактировать</div>
-                    <div class="py-2 px-4 hover:bg-gray-light cursor-pointer">
+                    <div>Редактировать
+                    </div>
+                    <div>
                         Удалить
                     </div>
                 </ui-dropdown>
@@ -103,7 +104,7 @@ function getRandomText() {
 
 <style scoped>
 .assistant_card {
-    @apply flex flex-col text-base border border-gray-light rounded-2xl;
+    @apply flex flex-col text-base border border-gray-light rounded-2xl dark:border-dark-gray-light dark:text-dark-dark;
 
     &__info {
         @apply overflow-hidden transition-all duration-300 ease-in-out;
@@ -114,14 +115,14 @@ function getRandomText() {
             @apply p-4 flex gap-4 flex-col;
 
             .info_body__label {
-                @apply text-dark;
+                @apply text-dark dark:text-dark-dark;
             }
 
             .info_body_items {
                 @apply flex flex-wrap gap-4;
 
                 &__item {
-                    @apply border border-gray-light p-2 gap-1 flex items-center;
+                    @apply border border-gray-light p-2 gap-1 flex items-center dark:border-dark-gray-light dark:text-dark-dark;
                     max-height: 48px;
                     border-radius: 100px;
 
@@ -139,7 +140,7 @@ function getRandomText() {
     }
 
     .opened {
-        @apply border-t border-gray-light;
+        @apply border-t border-gray-light dark:border-dark-gray-light;
         max-height: none;
         opacity: 1;
         border-top: 1px solid #e0e0e0;

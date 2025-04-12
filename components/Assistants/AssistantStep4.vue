@@ -15,14 +15,6 @@ defineProps({
                     {{message.title}}
                     <div class="time">{{message.time}}</div>
                 </div>
-<!--                <div class="message message_assistant">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam-->
-<!--                    deserunt dolorem eos error molestiae mollitia veritatis voluptatibus? Aliquam architecto at culpa-->
-<!--                    deserunt quia velit.-->
-<!--                    <div class="time">8:00</div>-->
-<!--                </div>-->
-<!--                <div class="message message_user">Lorem ipsum dolor sit amet.-->
-<!--                    <div class="time">8:01</div>-->
-<!--                </div>-->
             </div>
             <div class="chat-form__body__buttons">
                 <svg class="clip" fill="none" height="24" viewBox="0 0 24 24" width="24"
@@ -59,11 +51,11 @@ defineProps({
     @apply w-full h-full flex flex-col gap-6;
 
     &__title {
-        @apply font-bold text-base;
+        @apply font-bold text-base dark:text-dark-dark;
     }
 
     &__body {
-        @apply rounded-2xl border border-gray-light flex-grow flex flex-col p-6 gap-6 bg-white;
+        @apply rounded-2xl border border-gray-light flex-grow flex flex-col p-6 gap-6 bg-white dark:bg-dark-white dark:border-dark-gray-light;
 
         &__messages {
             @apply flex-grow flex flex-col-reverse gap-2;
@@ -81,7 +73,7 @@ defineProps({
                 }
 
                 &_assistant {
-                    @apply text-dark self-start;
+                    @apply text-dark self-start dark:bg-dark-bg dark:text-dark-dark;
                     background-color: #EFF1F7;
 
                     .time {
@@ -106,7 +98,7 @@ defineProps({
             }
 
             input {
-                @apply flex-grow px-3 py-2 pl-12 border border-gray-light rounded-lg hover:border-primary focus:border-primary focus:ring-0 focus:outline-0;
+                @apply flex-grow px-3 py-2 pl-12 border border-gray-light rounded-lg hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 dark:bg-dark-bg dark:border-dark-gray-light dark:text-dark-dark;
             }
 
             .btn {

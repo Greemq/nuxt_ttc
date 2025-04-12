@@ -16,7 +16,7 @@ defineProps({
     @apply flex w-full justify-between items-center;
     gap:10px;
     &__label{
-        @apply flex-grow;
+        @apply flex-grow dark:text-white;
         font-size: 28px;
         font-weight: 500;
         line-height: 36px;

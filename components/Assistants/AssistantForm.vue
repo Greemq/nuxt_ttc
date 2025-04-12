@@ -28,9 +28,10 @@ const prevStep = () => {
 
 <style scoped>
 .assistant_form {
-    @apply w-full bg-white rounded-3xl gap-6  max-w-[680px] p-8 flex flex-col;
+    @apply w-full bg-white rounded-3xl gap-6  max-w-[680px] p-8 flex flex-col dark:bg-dark-white;
 
     &__title {
+        @apply dark:text-dark-dark;
         font-size: 28px;
         font-weight: 500;
         line-height: 36px;

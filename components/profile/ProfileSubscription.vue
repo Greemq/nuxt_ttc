@@ -7,9 +7,10 @@ const activeButton = ref(1);
 
     <div class="flex gap-4 items-center ">
         <button :class="{'active_btn':activeButton==1}"
-                class="px-4 py-1 bg-gray-light text-gray cursor-pointer rounded-xl">Тарифы
+                class="px-4 py-1 bg-gray-light text-gray cursor-pointer rounded-xl dark:bg-dark-white">Тарифы
         </button>
-        <button class="px-4 py-1 bg-gray-light text-gray cursor-pointer rounded-xl">история оплат</button>
+        <button class="px-4 py-1 bg-gray-light text-gray cursor-pointer rounded-xl dark:bg-dark-white">история оплат
+        </button>
     </div>
     <div class="tarifs">
         <div class="tarifs_item">
@@ -263,20 +264,20 @@ const activeButton = ref(1);
 
 <style scoped>
 .active_btn {
-    @apply bg-primary-light border-primary border text-primary;
+    @apply bg-primary-light border-primary border text-primary dark:bg-dark-bg;
 }
 
 .tarifs {
-    @apply grid bg-white rounded-3xl lg:grid-cols-3 p-6 gap-6 grid-cols-1;
+    @apply grid bg-white rounded-3xl lg:grid-cols-3 p-6 gap-6 grid-cols-1 dark:bg-dark-white;
 
     &_item {
-        @apply col-span-1 border border-gray-light rounded-3xl  flex flex-col;
+        @apply col-span-1 border border-gray-light rounded-3xl  flex flex-col dark:border-dark-gray-light;
 
         &__header {
-            @apply flex flex-col gap-4 p-6 border-b border-gray-light;
+            @apply flex flex-col gap-4 p-6 border-b border-gray-light dark:border-dark-gray-light;
 
             &__title {
-                @apply text-[28px] flex justify-between items-center;
+                @apply text-[28px] flex justify-between items-center dark:text-dark-dark;
 
             }
 
@@ -287,10 +288,10 @@ const activeButton = ref(1);
                     }
 
                     &:last-child {
-                        @apply text-sm text-gray-dark font-normal pt-2 pb-3;
+                        @apply text-sm text-gray-dark font-normal pt-2 pb-3 ;
 
                         span {
-                            @apply text-black
+                            @apply text-black dark:text-dark-dark;
                         }
                     }
                 }
@@ -302,7 +303,7 @@ const activeButton = ref(1);
             @apply p-6 flex flex-col;
 
             &__item {
-                @apply flex gap-4 items-center text-base h-16;
+                @apply flex gap-4 items-center text-base h-16 dark:text-dark-dark;
             }
 
 

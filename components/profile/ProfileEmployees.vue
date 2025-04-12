@@ -137,7 +137,7 @@ const dropFormModal = () => {
                 <th class="w-12"></th>
                 <th class="w-auto">Имя и Фамилия</th>
                 <th class="w-auto">Почта</th>
-                <th class="px-1 w-[10%]">Статус</th>
+                <th class="px-1 w-[10%] ">Статус</th>
             </tr>
             <ProfileEmployeeCard v-for="item in employees" :item="item" @editEmployee="showEditModal"/>
         </table>
@@ -146,7 +146,7 @@ const dropFormModal = () => {
 
 <style scoped>
 .profile_employee {
-    @apply bg-white rounded-3xl p-6 flex flex-col gap-6;
+    @apply bg-white rounded-3xl p-6 flex flex-col gap-6 dark:bg-dark-white;
 
     table {
         @apply w-full table-auto border-separate;
@@ -158,7 +158,7 @@ const dropFormModal = () => {
 
         tr {
             th {
-                @apply text-left p-4;
+                @apply text-left p-4 dark:text-gray-dark;
             }
 
         }

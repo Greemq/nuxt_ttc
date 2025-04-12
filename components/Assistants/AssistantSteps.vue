@@ -24,17 +24,19 @@ defineProps({
     @apply w-full pl-6 ;
 
     &_body {
-        @apply bg-white w-full h-auto rounded-3xl max-w-[255px] flex flex-col p-6 gap-4;
+        @apply bg-white w-full h-auto rounded-3xl max-w-[255px] flex flex-col p-6 gap-4 dark:bg-dark-white;
     }
 
     &__item {
         @apply flex items-center gap-3 text-gray;
 
         &__icon {
-            @apply min-w-10 min-h-10 w-10 h-10 bg-gray-light border border-gray-light text-gray rounded-full flex items-center justify-center;
+            @apply min-w-10 min-h-10 w-10 h-10 bg-gray-light border border-gray-light text-gray rounded-full flex items-center justify-center dark:bg-dark-gray-light dark:border-dark-gray-light;
         }
 
         &__text {
+            @apply dark:text-gray;
+
             font-size: 14px;
             font-weight: 500;
             line-height: 20px;
@@ -42,11 +44,11 @@ defineProps({
 
         &.active {
             .assistant-steps__item__icon {
-                @apply bg-white border border-primary text-primary
+                @apply bg-white border border-primary text-primary dark:bg-dark-white
             }
 
             .assistant-steps__item__text {
-                @apply text-dark
+                @apply text-dark  dark:text-dark-dark
             }
         }
 
@@ -56,7 +58,7 @@ defineProps({
             }
 
             .assistant-steps__item__text {
-                @apply text-dark
+                @apply text-dark  dark:text-dark-dark
             }
         }
 

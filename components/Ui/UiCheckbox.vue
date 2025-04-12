@@ -82,10 +82,10 @@ const checkboxStyles = computed(() => {
     }
 
     &__item {
-        @apply flex items-center gap-3 text-dark font-normal text-base;
+        @apply flex items-center gap-3 text-dark font-normal text-base dark:text-dark-dark;
 
         .checkbox-icon {
-            @apply border-gray focus:border-primary hover:border-primary relative rounded min-w-5 min-h-5 w-5 h-5 border focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer flex justify-center items-center;
+            @apply border-gray focus:border-primary hover:border-primary relative rounded min-w-5 min-h-5 w-5 h-5 border focus:ring-0 focus:outline-0 text-white bg-white cursor-pointer flex justify-center items-center dark:bg-dark-bg;
 
         }
     }

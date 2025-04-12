@@ -86,7 +86,7 @@ onMounted(() => {
             <AssistantListCard v-for="item in 10" :name="item"/>
         </div>
     </div>
-    <right-modal ref="createModal" size="w-2/3" title="label">
+    <right-modal ref="createModal" size="w-1/2" title="label">
         <div class="flex h-full">
             <div class="w-2/3 flex flex-col gap-4">
                 <assistants-assistant-step1 v-if="step==1" v-model="formStep1"/>
@@ -108,13 +108,13 @@ onMounted(() => {
 
 <style scoped>
 .assistants {
-    @apply flex flex-col rounded-3xl bg-white p-6;
+    @apply flex flex-col rounded-3xl bg-white p-6 dark:bg-dark-white;
 
     &__item {
         @apply flex text-base;
 
         &_title {
-            @apply text-gray-dark
+            @apply text-gray-dark dark:text-gray-dark
         }
 
         &_1, &_6 {

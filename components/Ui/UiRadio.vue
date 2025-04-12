@@ -38,8 +38,16 @@ const updateValue = (value) => {
 .radio-form {
     @apply flex flex-col gap-4 ;
 
+    label {
+        @apply dark:text-dark-dark
+    }
+
     &__radio {
         @apply flex items-center gap-3;
+
+        &__text {
+            @apply dark:text-dark-dark;
+        }
 
         input {
             @apply hidden;
@@ -62,17 +70,18 @@ const updateValue = (value) => {
 
 
 }
+
 .disabled {
-        .radio-form__radio__icon {
+    .radio-form__radio__icon {
 
-            @apply border-gray-light;
+        @apply border-gray-light;
 
-            div {
-                @apply w-full h-full border-gray rounded-full;
-                border-width: 3px;
-            }
+        div {
+            @apply w-full h-full border-gray rounded-full;
+            border-width: 3px;
         }
     }
+}
 
 
 </style>

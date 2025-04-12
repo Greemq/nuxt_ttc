@@ -37,15 +37,15 @@ textarea {
 .btn {
   @apply justify-center;
   &.primary {
-    @apply bg-primary text-white;
+    @apply bg-primary text-white ;
     &.disabled {
-      @apply bg-gray border-0;
+      @apply bg-gray border-0 dark:text-dark-gray-light;
       color: theme('colors.white');
     }
   }
 
   &.secondary {
-    @apply border border-primary bg-white text-primary;
+    @apply border border-primary bg-white text-primary dark:bg-dark-bg;
     &.disabled {
       @apply text-white bg-gray border-gray ;
     }
@@ -93,9 +93,12 @@ textarea {
     leading-6
     hover:border-primary
     focus:border-primary
-    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between;
+    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between
+    dark:bg-dark-bg
+    dark:border-dark-gray-light
+    ;
     input, select {
-      @apply w-full;
+      @apply w-full dark:bg-dark-bg dark:text-dark-dark;
     }
 
     textarea {
@@ -126,6 +129,9 @@ textarea {
       @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
     }
   }
+  textarea {
+      @apply dark:bg-dark-bg dark:border-dark-gray-light dark:text-dark-dark;
+    }
 }
 
 .input-form {
@@ -160,9 +166,9 @@ textarea {
 }
 
 .dropdown {
-  @apply flex gap-1 flex-col w-full relative;
+  @apply flex gap-1 flex-col w-full relative ;
   label {
-    @apply text-dark font-normal text-sm;
+    @apply text-dark font-normal text-sm dark:text-dark-dark;
     line-height: 20px;
   }
 
@@ -178,7 +184,7 @@ textarea {
 
 
   &_button {
-    @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray;
+    @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray dark:bg-dark-bg dark:border-dark-gray-light;
 
     &__icon {
       width: 24px;
@@ -196,7 +202,7 @@ textarea {
 
   &_menu {
     z-index: 10;
-    @apply flex flex-col gap-1 bg-white rounded-lg  w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute;
+    @apply flex flex-col gap-1 bg-white rounded-lg  w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute dark:bg-dark-bg;
     top: 100%;
 
     &__list {
@@ -209,7 +215,7 @@ textarea {
     }
 
     &__item {
-      @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer;
+      @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer  hover:dark:bg-dark-gray-light dark:text-dark-dark;
 
     }
 

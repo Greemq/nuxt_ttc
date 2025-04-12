@@ -41,10 +41,10 @@ defineExpose({open, close});
     &_body {
         max-width: 400px;
         height: auto;
-        @apply w-full bg-white rounded-2xl py-6 pl-6 pr-2;
+        @apply w-full bg-white rounded-2xl py-6 pl-6 pr-2 dark:bg-dark-white;
 
         &__title {
-            @apply font-bold text-xl pb-6 pr-4
+            @apply font-bold text-xl pb-6 pr-4 dark:text-dark-dark
         }
 
         &__content {
@@ -57,7 +57,7 @@ defineExpose({open, close});
     }
 
     &_overlay {
-        @apply bg-dark w-full h-full opacity-50 absolute;
+        @apply bg-dark w-full h-full opacity-50 absolute dark:bg-dark-dark;
         z-index: -1;
     }
 }

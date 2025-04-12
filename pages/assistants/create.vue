@@ -62,7 +62,7 @@ const messages = ref([
 </script>
 
 <template>
-    <div class="flex justify-center pt-20">
+    <div class="flex justify-center pt-10">
         <div class="flex-1 max-w-[calc((100%-700px)/2)]"></div>
         <assistants-assistant-form class="w-full max-w-[700px]" label="Создание ассистента" @prevStep="handleSteps(-1)">
             <AssistantStep1 v-if="step==1" v-model="formStep1"/>
@@ -71,7 +71,7 @@ const messages = ref([
             <AssistantStep4 :messages v-else-if="step==4" v-model="formStep4" title="Протестируйте вашего ассистента"/>
             <template #buttons>
                 <ui-button label="продолжить" type="primary" @click="handleSteps(1)"/>
-                <ui-button class="!text-gray-dark" label="назад" type="tertiary" @click="handleSteps(-1)"/>
+                <ui-button class="!text-gray-dark dark:!text-gray" label="назад" type="tertiary" @click="handleSteps(-1)"/>
             </template>
         </assistants-assistant-form>
         <div class="flex-1 max-w-[calc((100%-700px)/2)]">

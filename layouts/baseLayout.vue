@@ -18,7 +18,7 @@ const slots = useSlots();
         <sidebar v-if="!sidebarHidden" />
         <div class="flex flex-col flex-grow">
             <ui-header/>
-            <main class="bg-bg flex flex-col px-6 py-5 gap-6 h-full overflow-y-auto">
+            <main class="bg-bg dark:bg-dark-bg flex flex-col px-6 py-5 gap-6 h-full overflow-y-auto">
                 <slot/>
             </main>
         </div>

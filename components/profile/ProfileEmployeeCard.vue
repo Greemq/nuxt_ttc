@@ -64,7 +64,7 @@ const employeeInputs = computed(() => [
                 class="transition-transform duration-200 cursor-pointer"
                 fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"
                 @click="infoHidden=!infoHidden">
-                <path d="M17.6 9.60001L12 14.4L6.4 9.60001" stroke="#1A1B1B" stroke-linecap="round"
+                <path d="M17.6 9.60001L12 14.4L6.4 9.60001" stroke="currentColor" stroke-linecap="round"
                       stroke-linejoin="round" stroke-width="1.5"/>
             </svg>
         </td>
@@ -81,20 +81,20 @@ const employeeInputs = computed(() => [
                          @click="$refs.dropdown.open()">
                         <path
                             d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
-                            fill="#1A1B1B"/>
+                            fill="currentColor"/>
                         <path
                             d="M12 7.5C12.8284 7.5 13.5 6.82843 13.5 6C13.5 5.17157 12.8284 4.5 12 4.5C11.1716 4.5 10.5 5.17157 10.5 6C10.5 6.82843 11.1716 7.5 12 7.5Z"
-                            fill="#1A1B1B"/>
+                            fill="currentColor"/>
                         <path
                             d="M12 19.5C12.8284 19.5 13.5 18.8284 13.5 18C13.5 17.1716 12.8284 16.5 12 16.5C11.1716 16.5 10.5 17.1716 10.5 18C10.5 18.8284 11.1716 19.5 12 19.5Z"
-                            fill="#1A1B1B"/>
+                            fill="currentColor"/>
                     </svg>
                     <ui-dropdown ref="dropdown" class="w-0 h-0">
-                        <div class="w-48 py-2 px-4 hover:bg-gray-light cursor-pointer" @click="$emit('editEmployee',item)">Редактировать</div>
-                        <div class="py-2 px-4 hover:bg-gray-light cursor-pointer" @click="$refs.deleteModal.open()">
+                        <div class="" @click="$emit('editEmployee',item)">Редактировать</div>
+                        <div class="" @click="$refs.deleteModal.open()">
                             Удалить
                         </div>
-                        <div class="py-2 px-4 hover:bg-gray-light cursor-pointer flex justify-between">
+                        <div class="w-48 flex justify-between">
                             <span>Активен</span>
                             <ui-toggle/>
                         </div>
@@ -110,15 +110,15 @@ const employeeInputs = computed(() => [
                 <div class="w-full p-4 flex flex-col justify-center">
                     <div class="flex py-2 text-base">
                         <div class="w-2/12 text-gray-dark">Номер телефона</div>
-                        <div class="w-10/12 text-dark">{{ item.phone }}</div>
+                        <div class="w-10/12 text-dark dark:text-dark-dark">{{ item.phone }}</div>
                     </div>
                     <div class="flex py-2 text-base">
                         <div class="w-2/12 text-gray-dark">Должность</div>
-                        <div class="w-10/12 text-dark">{{ item.job }}</div>
+                        <div class="w-10/12 text-dark dark:text-dark-dark">{{ item.job }}</div>
                     </div>
                     <div class="flex py-2 text-base">
                         <div class="w-2/12 text-gray-dark">Доступ к разделам</div>
-                        <div class="w-10/12 text-dark">{{ accessString }}</div>
+                        <div class="w-10/12 text-dark dark:text-dark-dark">{{ accessString }}</div>
                     </div>
                 </div>
             </td>
@@ -202,7 +202,7 @@ const employeeInputs = computed(() => [
 
 .main_card {
     td {
-        @apply border border-gray-light border-x-0 border-y p-4 ;
+        @apply border border-gray-light border-x-0 border-y p-4 dark:border-dark-gray-light dark:text-dark-dark;
 
         &:first-child {
             @apply rounded-l-2xl border-l flex justify-center items-center;
@@ -217,7 +217,7 @@ const employeeInputs = computed(() => [
 
 .external_card {
     td {
-        @apply border border-gray-light rounded-2xl p-4;
+        @apply border border-gray-light rounded-2xl p-4 dark:border-dark-gray-light;
     }
 }
 

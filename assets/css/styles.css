@@ -40,11 +40,11 @@ textarea {
   @apply bg-primary text-white;
 }
 .btn.primary.disabled {
-  @apply bg-gray border-0;
+  @apply bg-gray border-0 dark:text-dark-gray-light;
   color: theme("colors.white");
 }
 .btn.secondary {
-  @apply border border-primary bg-white text-primary;
+  @apply border border-primary bg-white text-primary dark:bg-dark-bg;
 }
 .btn.secondary.disabled {
   @apply text-white bg-gray border-gray;
@@ -88,10 +88,12 @@ textarea {
     leading-6
     hover:border-primary
     focus:border-primary
-    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between;
+    focus:ring-0 focus:outline-0 flex gap-3 items-center w-full justify-between
+    dark:bg-dark-bg
+    dark:border-dark-gray-light;
 }
 .input-form .input-class input, .input-form .input-class select, .input-textarea .input-class input, .input-textarea .input-class select, .select-form .input-class input, .select-form .input-class select {
-  @apply w-full;
+  @apply w-full dark:bg-dark-bg dark:text-dark-dark;
 }
 .input-form .input-class textarea, .input-textarea .input-class textarea, .select-form .input-class textarea {
   @apply border-error;
@@ -110,6 +112,9 @@ textarea {
 }
 .input-form.disabled textarea, .input-textarea.disabled textarea, .select-form.disabled textarea {
   @apply text-gray-dark hover:border-gray-light cursor-not-allowed bg-bg;
+}
+.input-form textarea, .input-textarea textarea, .select-form textarea {
+  @apply dark:bg-dark-bg dark:border-dark-gray-light dark:text-dark-dark;
 }
 
 .input-form input {
@@ -138,7 +143,7 @@ textarea {
   @apply flex gap-1 flex-col w-full relative;
 }
 .dropdown label {
-  @apply text-dark font-normal text-sm;
+  @apply text-dark font-normal text-sm dark:text-dark-dark;
   line-height: 20px;
 }
 .dropdown__error label {
@@ -148,7 +153,7 @@ textarea {
   @apply border-error text-error;
 }
 .dropdown_button {
-  @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray;
+  @apply flex gap-1 bg-white items-center justify-between px-3 py-2 rounded-lg border border-gray-light hover:border-primary focus:border-primary focus:ring-0 focus:outline-0 text-gray dark:bg-dark-bg dark:border-dark-gray-light;
 }
 .dropdown_button__icon {
   width: 24px;
@@ -161,7 +166,7 @@ textarea {
 }
 .dropdown_menu {
   z-index: 10;
-  @apply flex flex-col gap-1 bg-white rounded-lg w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute;
+  @apply flex flex-col gap-1 bg-white rounded-lg w-full shadow-lg ring-1 ring-black ring-opacity-5 absolute dark:bg-dark-bg;
   top: 100%;
 }
 .dropdown_menu__list {
@@ -172,7 +177,7 @@ textarea {
   clip-path: inset(0 round 8px);
 }
 .dropdown_menu__item {
-  @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer;
+  @apply pl-3 pt-3 pb-3 pr-3 text-dark hover:bg-gray-light rounded-sm cursor-pointer hover:dark:bg-dark-gray-light dark:text-dark-dark;
 }
 
 @font-face {

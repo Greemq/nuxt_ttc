@@ -1,19 +1,28 @@
 <script setup>
-import {ref} from 'vue';
+import { ref, watch } from 'vue'
 
-const isChecked = ref(false);
+const props = defineProps({
+  modelValue: { type: Boolean, default: false },
+  label: { type: String, default: '' }
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+const isChecked = ref(props.modelValue)
 
 const handleCheckboxChange = () => {
-    isChecked.value = !isChecked.value;
-};
-defineProps({
-    label: {type: String}
-});
+  isChecked.value = !isChecked.value
+  emit('update:modelValue', isChecked.value)
+}
+
+watch(() => props.modelValue, (val) => {
+  isChecked.value = val
+})
 </script>
 
 <template>
     <label class="toggle">
-        <div class="toggle_text" v-if="label">{{ label }}</div>
+        <div v-if="label" class="toggle_text">{{ label }}</div>
         <div class="toggle_body">
 
             <input class="sr-only" type="checkbox" @change="handleCheckboxChange"/>
@@ -29,9 +38,11 @@ defineProps({
 <style scoped>
 .toggle {
     @apply flex cursor-pointer select-none items-center gap-3;
-    &_text{
-        @apply text-dark
+
+    &_text {
+        @apply text-dark dark:text-white
     }
+
     &_body {
         @apply relative flex justify-center items-center;
 
@@ -41,7 +52,7 @@ defineProps({
         }
 
         &__dot {
-            @apply absolute left-0.5 h-3 w-3 rounded-full bg-white transition;
+            @apply absolute left-0.5 !h-3 !w-3 rounded-full bg-white transition;
         }
     }
 }

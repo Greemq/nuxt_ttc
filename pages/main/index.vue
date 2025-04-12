@@ -134,12 +134,15 @@ const chartOptions2 = computed(() => {
     }, {});
 
     return {
+        theme: {
+            mode: isDarkMode() ? 'dark' : 'light'
+        },
         chart: {
             type: "bar",
             redrawOnWindowResize: false,
             stacked: true,
-            toolbar: { show: false },
-            tooltip: { enabled: false },
+            toolbar: {show: false},
+            tooltip: {enabled: false},
             animations: {
                 enabled: true,
                 speed: 600,
@@ -150,7 +153,7 @@ const chartOptions2 = computed(() => {
                 },
                 dynamicAnimation: {
                     enabled: false,
-                    delay:600
+                    delay: 600
                 }
             },
             parentHeightOffset: 0,
@@ -165,7 +168,7 @@ const chartOptions2 = computed(() => {
                 startingShape: "flat"
             },
         },
-        legend: { show: false },
+        legend: {show: false},
         xaxis: {
             categories: xAxisCategories.value,
             labels: {
@@ -177,9 +180,9 @@ const chartOptions2 = computed(() => {
             enabled: false
         },
         grid: {
-            padding: { left: 0, right: -10, top: 0, bottom: -20 },
+            padding: {left: 0, right: -10, top: 0, bottom: -20},
         },
-        fill: { opacity: 1 },
+        fill: {opacity: 1},
         colors: filteredSeries2.value.map(series => colorsMap[series.id] || "#000"),
     };
 });
@@ -270,6 +273,10 @@ const chartOptions3 = ref({
     colors: ["#48B7A8"]
 });
 
+function isDarkMode() {
+    return document.documentElement.classList.contains('dark');
+}
+
 </script>
 
 <template>
@@ -289,13 +296,13 @@ const chartOptions3 = ref({
             <div class="flex flex-col gap-2">
                 <div class="flex items-center py-1 gap-1">
                     <div class="w-3 h-3 rounded-full border-2 border-primary"></div>
-                    <span class="text-gray text-sm">Новые</span>
-                    <span>{{ currentValue }}</span>
+                    <span class="text-gray text-sm dark:text-gray-dark">Новые</span>
+                    <span class="dark:text-dark-dark  text-sm">{{ currentValue }}</span>
                 </div>
                 <div class="flex items-center py-1 gap-1">
-                    <div class="w-3 h-3 rounded-full border-2 border-gray"></div>
-                    <span class="text-gray text-sm">Вернувшиеся</span>
-                    <span>{{ maxValue - currentValue }}</span>
+                    <div class="w-3 h-3 rounded-full border-2 border-gray dark:border-dark-gray-light"></div>
+                    <span class="text-gray text-sm dark:text-gray-dark">Вернувшиеся</span>
+                    <span class="dark:text-dark-dark text-sm">{{ maxValue - currentValue }}</span>
                 </div>
             </div>
         </div>
@@ -313,7 +320,7 @@ const chartOptions3 = ref({
             </div>
             <ClientOnly>
                 <ApexChart :key="'1_'+chartKey" :options="chartOptions2" :series="filteredSeries2" class="chart"
-                            height="300px"
+                           height="300px"
                            type=""/>
             </ClientOnly>
         </div>
@@ -342,10 +349,10 @@ const chartOptions3 = ref({
 
 <style scoped>
 .stats {
-    @apply grid lg:grid-cols-12 gap-6 w-full md:grid-cols-1;
+    @apply grid lg:grid-cols-12 gap-6 w-full md:grid-cols-1 ;
 
     &_item {
-        @apply bg-white rounded-3xl p-6
+        @apply bg-white rounded-3xl p-6 dark:bg-dark-white
     }
 }
 
@@ -353,10 +360,10 @@ const chartOptions3 = ref({
     @apply grid lg:grid-cols-12 gap-6 w-full md:grid-cols-1;
 
     &_item {
-        @apply bg-white rounded-3xl p-6 flex flex-col;
+        @apply bg-white rounded-3xl p-6 flex flex-col dark:bg-dark-white;
 
         &__short {
-            @apply w-full md:max-w-full lg:col-span-2;
+            @apply w-full md:max-w-full lg:col-span-2 ;
         }
 
         &__long {
@@ -371,7 +378,7 @@ const chartOptions3 = ref({
             @apply flex flex-col gap-4;
 
             &__label {
-                @apply text-base font-bold;
+                @apply text-base font-bold dark:text-dark-dark;
             }
 
         }

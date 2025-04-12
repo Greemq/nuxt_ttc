@@ -104,25 +104,25 @@ const inputs2 = computed(() => [
 
 <style scoped>
 .profile_account {
-    @apply bg-white rounded-3xl p-6 flex flex-col gap-6 grow;
+    @apply bg-white rounded-3xl p-6 flex flex-col gap-6 grow dark:bg-dark-white;
     &_header{
         @apply flex flex-col gap-2;
         &__label{
-            @apply font-bold text-base;
+            @apply font-bold text-base dark:text-dark-dark;
         }
         &__avatar{
             @apply flex gap-4 items-center;
             span{
-                @apply flex items-center justify-center w-14 h-14 rounded-full bg-primary-light text-primary text-center text-2xl;
+                @apply flex items-center justify-center w-14 h-14 rounded-full bg-primary-light text-primary text-center text-2xl dark:bg-dark-bg;
             }
         }
 
     }
     &_info {
-        @apply grid grid-cols-2 gap-4 border border-gray-light rounded-2xl p-4;
+        @apply grid grid-cols-2 gap-4 border border-gray-light rounded-2xl p-4 dark:border-dark-gray-light;
 
         &__label {
-            @apply col-span-2 font-bold text-base;
+            @apply col-span-2 font-bold text-base dark:text-dark-dark;
         }
     }
 }

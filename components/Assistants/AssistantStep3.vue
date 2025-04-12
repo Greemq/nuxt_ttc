@@ -124,7 +124,7 @@ const googleXlsx = ref(null);
                 <div class="online_docs__item">
                     <div class="online_docs__item__content">
                         <img alt="" src="/images/icons/Google%20doc.svg">
-                        <ui-input v-model="googleDoc" label="link to google"/>
+                        <ui-input v-model="googleDoc" label="link to google" placeholder="link"/>
                         <ui-button :disabled="!googleDoc" label="Добавить" type="primary"/>
                     </div>
                     <ui-notification label="Ccылка успешно добавлена" type="success"/>
@@ -146,7 +146,7 @@ const googleXlsx = ref(null);
 <style scoped>
 
 .file_info {
-    @apply flex py-2 w-full border-b border-gray-light items-center max-w-full;
+    @apply flex py-2 w-full border-b border-gray-light items-center max-w-full dark:border-dark-white;
 
     &__icon {
         @apply w-10 h-10
@@ -162,7 +162,7 @@ const googleXlsx = ref(null);
     }
 
     &__name {
-        @apply font-normal text-sm truncate w-full;;
+        @apply font-normal text-sm truncate w-full dark:text-dark-dark;
     }
 
     &__size {
