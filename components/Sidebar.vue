@@ -37,7 +37,7 @@ const isActive = (path) => route.path === localePath(path);
                 <img :class="{ 'hidden': toggle }" alt="" class="ttc_logo" src="/images/icons/logo_1.svg">
             </div>
             <div class="sidebar_container__menu">
-                <NuxtLink :class="{'sidebar_container__menu__item_active':isActive('/main')}" :to="localePath('/main')"
+                <NuxtLink :class="{'sidebar_container__menu__item_active':isActive('/')}" :to="localePath('/')"
                           class="sidebar_container__menu__item">
                     <svg class="sidebar_container__menu_icon" fill="none" height="24" viewBox="0 0 24 24" width="24"
                          xmlns="http://www.w3.org/2000/svg">

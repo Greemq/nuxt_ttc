@@ -46,9 +46,6 @@ const confirm_password = ref('');
                     <ui-input v-model="email" label="Email" placeholder="Введите e-mail"/>
                     <ui-button :disabled="!email" label="Войти" @click="$refs.register_modal.open()"/>
                 </div>
-<!--                <ui-notification label="Lorem ipsum dolor sit amet, consectetur adip" type="error"/>-->
-<!--                <ui-notification label="Lorem ipsum dolor sit amet, consectetur adip" type="success"/>-->
-<!--                <ui-notification label="Lorem ipsum dolor sit amet, consectetur adip" type="info"/>-->
             </div>
 
             <center-modal ref="register_modal" title="Введите пароль">
